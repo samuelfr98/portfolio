@@ -25,6 +25,14 @@ function App() {
     <div className="App">
       <div>
         <TitleBar />
+        <div className="fileBar">
+          <button>File</button>
+          <button>Edit</button>
+          <button>View</button>
+          <button>Image</button>
+          <button>Options</button>
+          <button>Help</button>
+        </div>
       </div>
       <div className="sideAndBoard">
         <div className="sideBar">
