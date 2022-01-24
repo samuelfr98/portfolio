@@ -1,38 +1,154 @@
 .App {
-  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  height: 100vh;
+  width: 100vw;
+  background-color: #BFBFBF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sideBar {
+  display: block;
+  margin: 0px;
+  margin-left: 4px;
+  height: auto;
+  width: 80px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sideButton {
+  margin-top: 0px;
+  width: 80px;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sideButton button {
+  border-radius: 0px;
+  background-color: #BFBFBF;
+  color: rgb(44, 44, 44);
+  height: 40px;
+  width: 80px;
+  box-shadow: 2px 2px black;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+
+.sideButton button:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
+  box-shadow: 2px 1px black;
+
+}
+
+.sideButton button.active {
+  background-color: #04AA6D;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.titleBar {
+  overflow: hidden;
+  margin: 4px;
+  font-size: 8px;
+  padding-left: 50px;
+  border: 1px;
+  border-style: solid;
+  background-color: #020180;
+  color: white;
+  align-items: center;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .fileBar {
+  overflow: hidden;
+  margin: 4px;
+  font-size: 8px;
+  padding-left: 50px;
+  border: 1px;
+  border-style: solid;
+  align-items: center;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.fileName {
+  display: inline-block;
+  height: auto;
+}
+
+.minMaxEsc {
+  display: inline-block;
+  margin-right: 3px;
+  justify-content: center;
+  align-content: center;
+}
+
+.minimize {
+  content: "&#95;";
+}
+
+.maximize {
+  content: "&square;";
+}
+
+.esc {
+  content: "&times;";
+}
+
+.minMaxEsc button {
+  border-radius: 0px;
+  background-color: #BFBFBF;
+  color: rgb(44, 44, 44);
+  height: 20px;
+  width: 23px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 1px;
+  padding: 0px;
+  box-shadow: 5px black;
+  font-size: 14px;
+  font-weight: bolder;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 18px;
+}
+
+.minMaxEsc button:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
+}
+
+.minMaxEsc button.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.paintBoard {
+  height: auto;
+  width: 100pc;
+  display: block;
+  background-color: #7F7F7F;
+}
+
+.whiteArea {
+  margin: 5px;
+  float:top left;
+  height: 50vh;
+  width: 50vw; 
+  min-width: 1vw;
+  min-height: 1vh;
+  max-width: 93.5vw;
+  max-height: 76.5vh;
+  resize: both;
+  overflow: auto;
+  background-color: white;
+  cursor: crosshair;
+}
+
+.sideAndBoard {
+  display: flex;
+  height: 40pc;
 }
