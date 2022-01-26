@@ -1,4 +1,4 @@
-function AboutMe() {
+const AboutMe = (theme) => {
   return (
     <div className="aboutMe">
       <div className="aboutTitle">
@@ -7,8 +7,10 @@ function AboutMe() {
       <div>
         <p>
           My name is Sam Friedman, and I'm from Charlotte, NC. I decided to make
-          this website as a portfolio and to practice some different layouts.
-          I grew up playing computer games in the early 2000s, and I wanted this site to feel nostalgic. This first style is inspired by the old MS Paint aesthetic.
+          this website as a portfolio and to practice some different layouts. I
+          grew up playing computer games in the early 2000s, and I wanted this
+          site to feel nostalgic. This first style is inspired by the old MS
+          Paint aesthetic.
         </p>
       </div>
       <div>
@@ -40,13 +42,11 @@ function AboutMe() {
           held a leadership position dedicated to research, development and
           strategy. Over three summers, I interned with three startups across
           diverse industries. I climbed with UNc's rock climbing club, and my
-          friends and I won a cash prize at a start up competition. 
+          friends and I won a cash prize at a start up competition.
         </p>
       </div>
       <div>
-        <p>
-          Today, I live down in Baton Rouge, LA.
-        </p>
+        <p>Today, I live down in Baton Rouge, LA.</p>
       </div>
     </div>
   );

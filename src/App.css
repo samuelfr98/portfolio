@@ -1,4 +1,4 @@
-.App {
+.RetroApp {
   font-family: "Courier New", Courier, monospace;
   font-weight: 500;
   height: 100vh;
@@ -35,17 +35,18 @@
 .sideButton button:hover {
   background-color: rgb(172, 172, 172);
   color: black;
-  box-shadow: 2px 1px black;
+  box-shadow: 2px 2px black;
 }
 
-/* .sideButton button.active {
-  background-color: #9e9e9e;
-} */
+.sideButton button.active {
+  box-shadow: 1px 1px black;
+}
 
 .titleBar {
   overflow: hidden;
-  margin: 4px;
+  margin: 0px;
   margin-bottom: 0px;
+  margin-top: 0px;
   font-size: 8px;
   padding-left: 50px;
   border: 1px;
@@ -114,7 +115,7 @@
 .minMaxEsc button {
   border-radius: 0px;
   background-color: #bfbfbf;
-  color: rgb(44, 44, 44);
+  color: black;
   height: 20px;
   width: 23px;
   margin-top: 4px;
@@ -134,10 +135,9 @@
   color: black;
 }
 
-/* .minMaxEsc button.active {
-  background-color: #04aa6d;
-  color: white;
-} */
+.minMaxEsc button.active {
+  box-shadow: 1px 1px black;
+}
 
 .paintBoard {
   height: 80vh;
@@ -149,8 +149,8 @@
 .whiteArea {
   margin: 5px;
   float: top left;
-  height: 50vh;
-  width: 50vw;
+  height: 74vh;
+  width: 78vw;
   min-width: 1vw;
   min-height: 1vh;
   max-width: 88.3vw;
@@ -172,4 +172,193 @@
   margin: 4vh;
   padding: 2vh;
   background-color: whitesmoke;
+}
+
+.belowPaintBoard {
+  height: calc(19.5vh - 50px);
+  width: 100vw;
+  display: flex;
+}
+
+.belowSideBar {
+  width: 10vw;
+  margin: 0.5vh;
+  margin-bottom: 0px;
+  float: left;
+}
+
+.belowPaint {
+  height: calc(19.5vh - 50px);
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.upgradeButton {
+  height: 5vh;
+  width: 8vw;
+  margin-right: 20px;
+}
+
+.upgradeButton button {
+  height: 5vh;
+  width: 8vw;
+  border-radius: 0px;
+  background-color: #bfbfbf;
+  color: rgb(44, 44, 44);
+  box-shadow: 3px 3px black;
+  font-weight: bolder;
+  font-size: 20px;
+  animation-name: upgrade;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.upgradeButton button:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
+  box-shadow: 2px 2px black;
+  animation: none;
+  cursor: pointer
+}
+
+.upgradeButton button:active {
+  box-shadow: 1px 1px black;
+}
+
+@keyframes upgrade {
+  0% {
+    background-color: #bfbfbf;
+    box-shadow: 3px 3px black;
+    height: 5vh;
+    width: 8vw;
+  }
+  25% {
+    background-color: rgb(172, 172, 172);
+    box-shadow: 5px 5px black;
+    height: 5.2vh;
+    width: 8.2vw;
+  }
+  50% {
+    background-color: #bfbfbf;
+    box-shadow: 3px 3px black;
+    height: 5vh;
+    width: 8vw;
+  }
+  75% {
+    background-color: rgb(172, 172, 172);
+    box-shadow: 5px 5px black;
+    height: 5.2vh;
+    width: 8.2vw;
+  }
+}
+
+.dialogueBox {
+  margin-right: 25px;
+  font-size: 14px;
+  background-color: #cacaca;
+  height: 8vh;
+  width: 24vw;
+}
+
+.dialogueBox button {
+  height: 8vh;
+  width: 24vw;
+  border-radius: 0px;
+  background-color: #bfbfbf;
+  color: rgb(44, 44, 44);
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 3px 3px black;
+}
+
+.dialogueBox button:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
+  box-shadow: 2px 2px black;
+  cursor: pointer;
+}
+
+.dialogueBox button:active {
+  box-shadow: 1px 1px black;
+}
+
+.prompt {
+  display: flex;
+  justify-content: center;
+  margin: 5px
+}
+
+
+.startUpdating {
+  font-size: 20px;
+  height: 20vh;
+  width: 30vw;
+  position: absolute;
+  top: 20%;
+  left: calc(50% - 15vw);
+  background-color: #bfbfbf;
+  border: 2px solid gray;
+  box-shadow: 2px 2px black;
+
+  min-width: 24vw;
+  min-height: 16vh;
+  max-width: 60vw;
+  max-height: 60vh;
+  resize: both;
+  overflow: auto;
+}
+
+.blueBar {
+  overflow: hidden;
+  margin: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 8px;
+  padding-left: 20px;
+  border: 1px;
+  border-style: solid;
+  background-color: #020180;
+  color: white;
+  align-items: center;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.startUpdating p {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+
+.updatingButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.updatingButtons button {
+  margin: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 3.5vh;
+  border-radius: 0px;
+  background-color: #bfbfbf;
+  border: 2px solid gray;
+  box-shadow: 2px 2px black;
+}
+
+.updatingButtons button:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
+  box-shadow: 2px 2px black;
+  cursor: pointer;
+}
+
+.updatingButtons button:active {
+  box-shadow: 1px 1px black;
 }

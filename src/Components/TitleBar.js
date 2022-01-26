@@ -1,5 +1,5 @@
 
-function TitleBar() {
+const TitleBar = (theme) => {
   return (
     <div>
       <div className="titleBar">
