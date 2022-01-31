@@ -190,7 +190,8 @@
 .belowPaint {
   height: calc(19.5vh - 50px);
   width: 90vw;
-  display: flex;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
   align-items: center;
   justify-content: right;
 }
@@ -220,7 +221,7 @@
   color: black;
   box-shadow: 2px 2px black;
   animation: none;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .upgradeButton button:active {
@@ -287,9 +288,8 @@
 .prompt {
   display: flex;
   justify-content: center;
-  margin: 5px
+  margin: 5px;
 }
-
 
 .startUpdating {
   font-size: 20px;
@@ -301,13 +301,12 @@
   background-color: #bfbfbf;
   border: 2px solid gray;
   box-shadow: 2px 2px black;
+  padding-bottom: 30px;
 
   min-width: 24vw;
   min-height: 16vh;
   max-width: 60vw;
   max-height: 60vh;
-  resize: both;
-  overflow: auto;
 }
 
 .blueBar {
@@ -326,6 +325,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.blueBar:hover {
+  cursor: default;
 }
 
 .startUpdating p {
@@ -361,4 +364,42 @@
 
 .updatingButtons button:active {
   box-shadow: 1px 1px black;
+}
+
+.progressBar {
+  border: 2px solid black;
+  margin-top: 5vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  height: 3vh;
+  width: calc(100% - 4vw - 5px);
+  padding: 1px;
+  background-color: rgb(216, 216, 216);
+}
+
+.growingBar {
+  background-color: #020180;
+  animation-name: load;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  height: min(calc(3vh - 0.5px)); 
+  justify-content: left;
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.homePage {
+  padding: 2vh;
+}
+
+.homePage p {
+  font-size: 18px;
+  margin-top: 5vh;
 }

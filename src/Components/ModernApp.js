@@ -1,124 +1,84 @@
-import "../App.css";
-import TitleBar from "./TitleBar";
-import AboutMe from "./AboutMe";
-import ContactMe from "./ContactMe";
-import Resume from "./Resume";
-import { useEffect, useState } from "react";
+import "../ModernApp.css";
+import personalLogo from "../Images/personalLogo.jpeg";
+import bluePaper from "../Images/bluePaper.jpeg";
+import React, { useEffect, useRef, useState } from "react";
+import FiberScene from "./FiberScene";
+import Logo from "./Logo";
+import Card from "./Card";
+import ModernAppLoader from "./ModernAppLoader";
+import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
 
-const ModernApp = ({downgradeTheme}) => {
-  const [state, setState] = useState({
-    aboutme: false,
-    resume: false,
-    contactme: false,
-    github: false,
-    linkedin: false,
-  });
+const ModernApp = ({ downgradeTheme }) => {
+  const [isLoading, setLoading] = useState(true);
+  const [scrollY, setScrollY] = useState(0);
+  const ref = useRef();
 
-  const redirect = (url) => {
-    if (url === "About Me")
-      setState({
-        aboutme: true,
-        resume: false,
-        contactme: false,
-        github: false,
-        linkedin: false,
-      });
-    else if (url === "Resume")
-      setState({
-        aboutme: false,
-        resume: true,
-        contactme: false,
-        github: false,
-        linkedin: false,
-      });
-    else if (url === "Contact Me")
-      setState({
-        aboutme: false,
-        resume: false,
-        contactme: true,
-        github: false,
-        linkedin: false,
-      });
-    else if (url === "https://github.com/samuelfr98") {
-      setState({
-        aboutme: false,
-        resume: false,
-        contactme: false,
-        github: true,
-        linkedin: false,
-      });
-      window.open(url, "_blank").focus();
-    } else if (url === "https://www.linkedin.com/in/sam-friedman-b8852118a") {
-      setState({
-        aboutme: false,
-        resume: false,
-        contactme: false,
-        github: false,
-        linkedin: true,
-      });
-      window.open(url, "_blank").focus();
-    }
-    console.log(state);
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4450);
+  }, []);
 
-  const showPage = (state) => {
-    if (state.aboutme) return <AboutMe />;
-    else if (state.resume) return <Resume />;
-    else if (state.contactme) return <ContactMe />;
-    else if (state.github) return <h1>GitHub</h1>;
-    else if (state.linkedin) return <h1>LinkedIn</h1>;
-    else return <h1>Home Page</h1>;
+  const handleScroll = (e) => {
+    // Fidn scroll position relative to top
+    setScrollY(e.target.scrollTop);
+    // Find SVG path and total length
+    const path = document.getElementById("path");
+    const length = path.getTotalLength();
+    // The starting position ofr the drawing
+    path.style.strokeDasharray = length;
+    // Hide the SVG by offsetting dash. Remove this line to show SCG before scroll draw
+    path.style.strokeDashoffset = length;
+
+    const scrollPercent = scrollY / (document.body.offsetHeight * 8);
+
+    const draw = length * scrollPercent;
+
+    path.style.strokeDashoffset = length - draw;
+    console.log(scrollY)
   };
 
   return (
-    <div className="ModernApp">
-      <div>
-        <TitleBar />
-        <div className="">
-          <button>File</button>
-          <button>Edit</button>
-          <button>View</button>
-          <button>Image</button>
-          <button>Options</button>
-          <button>Help</button>
-        </div>
+    <div
+      className="modernContainer"
+      onScroll={(e) => {
+        handleScroll(e);
+      }}
+    >
+      {isLoading ? <ModernAppLoader /> : ""}
+      <div className="scrollSvg" ref={ref}>
+        <ScrollingSVG />
       </div>
-      <div className="">
-        <div className="">
-          <div className="">
-            <button onClick={() => redirect("About Me")}>About Me</button>
-          </div>
-          <div className="">
-            <button onClick={() => redirect("Resume")}>Resume</button>
-          </div>
-          <div className="">
-            <button onClick={() => redirect("https://github.com/samuelfr98")}>
-              GitHub
-            </button>
-          </div>
-          <div className="">
-            <button
-              onClick={() =>
-                redirect("https://www.linkedin.com/in/sam-friedman-b8852118a")
-              }
-            >
-              LinkedIn
-            </button>
-          </div>
-          <div className="">
-            <button onClick={() => redirect("Contact Me")}>Contact Me</button>
-          </div>
-        </div>
-        <div className="">
-          <div className="">{showPage(state)}</div>
-        </div>
+      <div className="section">
+        <div>About Me</div>
+        <Card />
       </div>
-      <div className="">
-        <div className=""></div>
-        <div className="">
-          {/* Alert that, on hover, opens to reveal an upgrade option */}
-          <button className="alert" onClick={() => downgradeTheme('retro')}>!</button>
+      <div className="section">
+        <div>Thinking of an upgrade? Take it up a notch.</div>
+        <div>Card about website redesign</div>
+      </div>
+      <div className="section">
+        <div>Card about me</div>
+        <div>About Me</div>
+      </div>
+      <div className="section">
+        <div>Projects</div>
+        <div>Cards about projects</div>
+      </div>
+      <div className="section">
+        <div>Card about life today</div>
+        <div>Life Today</div>
+      </div>
+      <div className="section">
+        <div>Contact Me</div>
+        <div>Ways to contact me</div>
+      </div>
+      <div className="outerLogo">
+        <div className="logoContainer">
+          <div></div>
+          <Logo />
         </div>
+        <button onClick={() => downgradeTheme("retro")}>Downgrade</button>
       </div>
     </div>
   );

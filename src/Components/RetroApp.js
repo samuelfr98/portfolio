@@ -1,9 +1,12 @@
-import "../App.css";
+import "../RetroApp.css";
 import TitleBar from "./TitleBar";
 import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
 import Resume from "./Resume";
 import UpgradeBox from "./UpgradeBox";
+import githubLogo from "../Images/githubLogo.jpeg";
+import linkedInLogo from "../Images/linkedInLogo.png";
+
 import { useEffect, useState } from "react";
 
 const RetroApp = ({ upgradeTheme, theme }) => {
@@ -13,6 +16,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     contactme: false,
     github: false,
     linkedin: false,
+    home: false,
   });
 
   const [showUpdateBox, setShowUpdateBox] = useState(false);
@@ -26,6 +30,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         contactme: false,
         github: false,
         linkedin: false,
+        home: false,
       });
     else if (url === "Resume")
       setState({
@@ -34,6 +39,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         contactme: false,
         github: false,
         linkedin: false,
+        home: false,
       });
     else if (url === "Contact Me")
       setState({
@@ -42,6 +48,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         contactme: true,
         github: false,
         linkedin: false,
+        home: false,
       });
     else if (url === "https://github.com/samuelfr98") {
       setState({
@@ -50,6 +57,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         contactme: false,
         github: true,
         linkedin: false,
+        home: false,
       });
       window.open(url, "_blank").focus();
     } else if (url === "https://www.linkedin.com/in/sam-friedman-b8852118a") {
@@ -59,8 +67,18 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         contactme: false,
         github: false,
         linkedin: true,
+        home: false,
       });
       window.open(url, "_blank").focus();
+    } else if (url === "Home") {
+      setState({
+        aboutme: false,
+        resume: false,
+        contactme: false,
+        github: false,
+        linkedin: false,
+        home: true,
+      });
     }
     console.log(state);
   };
@@ -69,9 +87,31 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     if (state.aboutme) return <AboutMe />;
     else if (state.resume) return <Resume />;
     else if (state.contactme) return <ContactMe />;
-    else if (state.github) return <h1>GitHub</h1>;
-    else if (state.linkedin) return <h1>LinkedIn</h1>;
-    else return <h1>Home Page</h1>;
+    else if (state.github)
+      return (
+        <img src={githubLogo} alt="GitHub Logo" height="100%" width="100%" />
+      );
+    else if (state.linkedin)
+      return (
+        <img
+          src={linkedInLogo}
+          alt="LinkedIn Logo"
+          height="100%"
+          width="100%"
+        />
+      );
+    else
+      return (
+        <div className="homePage">
+          <h1 className="">Welcome to Sam Friedman's Portfolio!</h1>
+          <p>
+            Sam was born in 1998, and this website looks like it hasn't been
+            updated since then. <br /> <br />
+            Explore the retro theme, and check out the bottom right corner if
+            you think the site could use a upgrade!
+          </p>
+        </div>
+      );
   };
 
   return (
@@ -117,33 +157,41 @@ const RetroApp = ({ upgradeTheme, theme }) => {
           <div className="sideButton">
             <button onClick={() => redirect("Contact Me")}>Contact Me</button>
           </div>
+          <div className="sideButton">
+            <button onClick={() => redirect("Home")}>Home</button>
+          </div>
         </div>
         <div className="paintBoard">
           <div className="whiteArea">{showPage(state)}</div>
         </div>
       </div>
       <div className="belowPaintBoard">
-        <div className="belowSideBar">
-        </div>
+        <div className="belowSideBar"></div>
         <div className="belowPaint">
           {!showUpdateBox && !beginUpdate ? (
-            <div className="upgradeButton">
-              <button onMouseEnter={() => setShowUpdateBox(true)}>!</button>
-            </div>
+            <>
+              <div></div>
+              <div className="upgradeButton">
+                <button onMouseEnter={() => setShowUpdateBox(true)}>!</button>
+              </div>
+            </>
           ) : showUpdateBox && !beginUpdate ? (
-            <div
-              className="dialogueBox"
-              onMouseLeave={() => setShowUpdateBox(false)}
-            >
-              <button
-                onClick={() => {
-                  setBeginUpdate(true);
-                  setShowUpdateBox(false);
-                }}
+            <>
+              <div></div>
+              <div
+                className="dialogueBox"
+                onMouseLeave={() => setShowUpdateBox(false)}
               >
-                Click to upgrade to modern theme
-              </button>
-            </div>
+                <button
+                  onClick={() => {
+                    setBeginUpdate(true);
+                    setShowUpdateBox(false);
+                  }}
+                >
+                  Click to upgrade to modern theme
+                </button>
+              </div>
+            </>
           ) : (
             ""
           )}

@@ -9,24 +9,24 @@ const AboutMe = (theme) => {
           My name is Sam Friedman, and I'm from Charlotte, NC. I decided to make
           this website as a portfolio and to practice some different layouts. I
           grew up playing computer games in the early 2000s, and I wanted this
-          site to feel nostalgic. This first style is inspired by the old MS
+          site to feel nostalgic. This landing page is inspired by the old MS
           Paint aesthetic.
         </p>
       </div>
       <div>
         <p>
-          I grew up in Charlotte, NC. What began as a love for building legos
-          and constructing puzzles quickly evoled into a passion for problem
-          solving.
+          What began as building legos and constructing puzzles quickly evoled
+          into a passion for problem solving. Paired with a love of technology,
+          I fell into the world of programming.
         </p>
       </div>
       <div>
         <p>
           In highschool, I was elected president of the Math and Science Honors
           Societies. Outside of school, I was busy training with a competitive
-          rock climbing team, where I was recruited to coach younger climbers.
-          It was through these early responsibilities that my leadership and
-          teamplaying skills began to develop.
+          rock climbing team, where I was recruited to coach younger climbers. I
+          have been climbing for over a decade, and my favorite adventures are
+          on the edges of mountains.
         </p>
       </div>
       <div>
@@ -38,18 +38,17 @@ const AboutMe = (theme) => {
       </div>
       <div>
         <p>
-          While at UNC, I joined an environmental sustainability club, where I
-          held a leadership position dedicated to research, development and
-          strategy. Over three summers, I interned with three startups across
-          diverse industries. I climbed with UNc's rock climbing club, and my
-          friends and I won a cash prize at a start up competition.
+          While at UNC, I held a leadership position with an environmental
+          sustainability club. Over three summers, I interned with three
+          startups across diverse industries. I climbed with UNC's rock climbing
+          club, and my friends and I won a cash prize at a start up competition.
         </p>
       </div>
       <div>
-        <p>Today, I live down in Baton Rouge, LA.</p>
+        <p>Today, I am a software developer with IBM and live down in Baton Rouge, LA.</p>
       </div>
     </div>
   );
-}
+};
 
 export default AboutMe;
