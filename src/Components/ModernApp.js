@@ -5,80 +5,164 @@ import React, { useEffect, useRef, useState } from "react";
 import FiberScene from "./FiberScene";
 import Logo from "./Logo";
 import Card from "./Card";
+import samProfileImageBordered from "../Images/samProfileImageBordered.jpg";
+import homeBio from "../Images/homeBio.png";
+import mountainLineArt from "../Images/mountainLineArt.png";
 import ModernAppLoader from "./ModernAppLoader";
+import About from "./About";
+import Undergrad from "./Undergrad";
+import Today from "./Today";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import BioCard from "./BioCard";
 import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
 
 const ModernApp = ({ downgradeTheme }) => {
   const [isLoading, setLoading] = useState(true);
+  const [picSlide, setPicSlide] = useState(true);
   const [scrollY, setScrollY] = useState(0);
-  const ref = useRef();
+  const [nav, setNav] = useState({
+    about: false,
+    undergrad: false,
+    today: false,
+    projects: false,
+    contact: false,
+    home: true,
+  });
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4450);
+    }, 3950);
+
+    setTimeout(() => {
+      setPicSlide(false);
+    }, 7000);
   }, []);
 
-  const handleScroll = (e) => {
-    // Fidn scroll position relative to top
-    setScrollY(e.target.scrollTop);
-    // Find SVG path and total length
-    const path = document.getElementById("path");
-    const length = path.getTotalLength();
-    // The starting position ofr the drawing
-    path.style.strokeDasharray = length;
-    // Hide the SVG by offsetting dash. Remove this line to show SCG before scroll draw
-    path.style.strokeDashoffset = length;
+  const changePage = (navClicked) => {
+    if (navClicked === "about")
+      setNav({
+        about: true,
+        undergrad: false,
+        today: false,
+        projects: false,
+        contact: false,
+        home: false,
+      });
+    else if (navClicked === "undergrad")
+      setNav({
+        about: false,
+        undergrad: true,
+        today: false,
+        projects: false,
+        contact: false,
+        home: false,
+      });
+    else if (navClicked === "today")
+      setNav({
+        about: false,
+        undergrad: false,
+        today: true,
+        projects: false,
+        contact: false,
+        home: false,
+      });
+    else if (navClicked === "projects")
+      setNav({
+        about: false,
+        undergrad: false,
+        today: false,
+        projects: true,
+        contact: false,
+        home: false,
+      });
+    else if (navClicked === "contact")
+      setNav({
+        about: false,
+        undergrad: false,
+        today: false,
+        projects: false,
+        contact: true,
+        home: false,
+      });
+    else if (navClicked === "home")
+      setNav({
+        about: false,
+        undergrad: false,
+        today: false,
+        projects: false,
+        contact: false,
+        home: true,
+      });
+    Home();
+  };
 
-    const scrollPercent = scrollY / (document.body.offsetHeight * 8);
-
-    const draw = length * scrollPercent;
-
-    path.style.strokeDashoffset = length - draw;
-    console.log(scrollY)
+  const Home = () => {
+    console.log("ran again");
+    return (
+      <div className="contentContainer">
+        <div className="content">
+          {picSlide ? (
+            <>
+              <div className="profPic">
+                <Card />
+              </div>
+              <div className="homeBio">
+                <BioCard />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="profPicStatic">
+                <Card />
+              </div>
+              <div className="homeBioStatic">
+                <BioCard />
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div
-      className="modernContainer"
-      onScroll={(e) => {
-        handleScroll(e);
-      }}
-    >
+    <div className="global">
       {isLoading ? <ModernAppLoader /> : ""}
-      <div className="scrollSvg" ref={ref}>
-        <ScrollingSVG />
-      </div>
-      <div className="section">
-        <div>About Me</div>
-        <Card />
-      </div>
-      <div className="section">
-        <div>Thinking of an upgrade? Take it up a notch.</div>
-        <div>Card about website redesign</div>
-      </div>
-      <div className="section">
-        <div>Card about me</div>
-        <div>About Me</div>
-      </div>
-      <div className="section">
-        <div>Projects</div>
-        <div>Cards about projects</div>
-      </div>
-      <div className="section">
-        <div>Card about life today</div>
-        <div>Life Today</div>
-      </div>
-      <div className="section">
-        <div>Contact Me</div>
-        <div>Ways to contact me</div>
-      </div>
-      <div className="outerLogo">
-        <div className="logoContainer">
+      <div className="modernContainer">
+        <div className="topBar">
+          <div className="topLeftLogo" onClick={() => changePage("home")}>
+            Logo
+          </div>
+          <div className="navbar">
+            <div onClick={() => changePage("about")}>about</div>
+            <div onClick={() => changePage("undergrad")}>undergrad</div>
+            <div onClick={() => changePage("today")}>today</div>
+            <div onClick={() => changePage("projects")}>projects</div>
+            <div onClick={() => changePage("contact")}>contact</div>
+            <div onClick={() => downgradeTheme("retro")}>retro</div>
+          </div>
           <div></div>
-          <Logo />
+          <div>Contact buttons</div>
         </div>
-        <button onClick={() => downgradeTheme("retro")}>Downgrade</button>
+        <div className="display">
+          {nav.about ? (
+            <About />
+          ) : nav.undergrad ? (
+            <Undergrad />
+          ) : nav.today ? (
+            <Today />
+          ) : nav.projects ? (
+            <Projects />
+          ) : nav.contact ? (
+            <Contact />
+          ) : nav.home ? (
+            Home()
+          ) : (
+            "Something went wrong. Please try again."
+          )}
+        </div>
       </div>
     </div>
   );

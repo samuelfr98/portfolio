@@ -31,7 +31,7 @@ const Logo = () => {
 
   const onLogo = () => {
     const xDegrees = (x / 200).toFixed(0);
-    const yDegrees = (y / 200).toFixed(0);
+    const yDegrees = (y / 100).toFixed(0);
 
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;

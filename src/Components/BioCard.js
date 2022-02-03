@@ -1,9 +1,9 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
-import samProfileImageBordered from "../Images/samProfileImageBordered.jpg";
+import homeBio from "../Images/homeBio.png";
 
 
-const Card = () => {
+const BioCard = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const ref = useRef();
@@ -54,10 +54,8 @@ const Card = () => {
         <div>
           {/* <h1>Sam Friedman</h1> */}
           <img
-              src={samProfileImageBordered}
-              height="600vh"
-              object-fit="cover"
-              overflow="hidden"
+              src={homeBio}
+              height="250vh"
             />
         </div>
       </div>
@@ -65,4 +63,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default BioCard;

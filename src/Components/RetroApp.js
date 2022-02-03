@@ -21,6 +21,13 @@ const RetroApp = ({ upgradeTheme, theme }) => {
 
   const [showUpdateBox, setShowUpdateBox] = useState(false);
   const [beginUpdate, setBeginUpdate] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 6450);
+  }, []);
 
   const redirect = (url) => {
     if (url === "About Me")
@@ -116,6 +123,15 @@ const RetroApp = ({ upgradeTheme, theme }) => {
 
   return (
     <div className="RetroApp">
+      {loading ? (
+        <div className="retroAppLoader">
+          <div className="retroAppLoadingBar">
+            <div className="loader"></div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div>
         <TitleBar />
         <div className="fileBar">

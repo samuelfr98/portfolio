@@ -4,6 +4,7 @@
   height: 100vh;
   width: 100vw;
   background-color: #bfbfbf;
+  overflow: hidden;
 }
 
 .sideBar {
@@ -382,7 +383,7 @@
   animation-name: load;
   animation-duration: 5s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-  height: min(calc(3vh - 0.5px)); 
+  height: min(calc(3vh - 0.5px));
   justify-content: left;
 }
 
@@ -402,4 +403,56 @@
 .homePage p {
   font-size: 18px;
   margin-top: 5vh;
+}
+
+.retroAppLoader {
+  height: 100vh;
+  width: minmax(0px, 100vw);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  animation: 1.5s linear 5s loadContainer;
+  background-color: #bfbfbf;
+}
+
+.retroAppLoadingBar {
+  grid-column: 2;
+  grid-row: 2;
+  justify-content: center;
+  background-color: #a8a8a8;
+  width: 100%;
+  height: 2vh;
+  border: 2px solid gray;
+  padding: 1px;
+}
+
+.loader {
+  background-color: #020180;
+  animation-name: loading;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  justify-content: left;
+}
+
+/* Have loading bar grow into blue bar at top of screen */
+@keyframes loading {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loadContainer {
+  0% {
+    height: 100vh;
+    width: 100vw;
+  }
+  100% {
+    height: 1px;
+  }
 }
