@@ -431,16 +431,17 @@
 
 .loader {
   background-color: #020180;
-  animation-name: loading;
+  animation-name: loadingR;
   animation-duration: 5s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
   justify-content: left;
+  height: calc(2vh - 1px)
 }
 
 /* Have loading bar grow into blue bar at top of screen */
-@keyframes loading {
+@keyframes loadingR {
   0% {
-    width: 0px;
+    width: 0%;
   }
   100% {
     width: 100%;
@@ -456,3 +457,32 @@
     height: 1px;
   }
 }
+
+/* .progressBar {
+  border: 2px solid black;
+  margin-top: 5vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  height: 3vh;
+  width: calc(100% - 4vw - 5px);
+  padding: 1px;
+  background-color: rgb(216, 216, 216);
+}
+
+.growingBar {
+  background-color: #020180;
+  animation-name: load;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  height: min(calc(3vh - 0.5px));
+  justify-content: left;
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+} */

@@ -13,7 +13,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
   const [state, setState] = useState({
     aboutme: false,
     resume: false,
-    contactme: false,
+    contactme: false, 
     github: false,
     linkedin: false,
     home: false,

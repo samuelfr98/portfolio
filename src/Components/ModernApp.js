@@ -15,6 +15,7 @@ import Today from "./Today";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import BioCard from "./BioCard";
+import BlockLetterLogo from "../Images/blockLetterInitialsWithBackground.jpeg";
 import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
 
 const ModernApp = ({ downgradeTheme }) => {
@@ -133,7 +134,8 @@ const ModernApp = ({ downgradeTheme }) => {
       <div className="modernContainer">
         <div className="topBar">
           <div className="topLeftLogo" onClick={() => changePage("home")}>
-            Logo
+            <img src={BlockLetterLogo} height="75vh"overflow="hidden" padding="2px"/>
+            {/* <Logo /> */}
           </div>
           <div className="navbar">
             <div onClick={() => changePage("about")}>about</div>

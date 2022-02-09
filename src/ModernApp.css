@@ -74,8 +74,14 @@
   height: 12vh;
 }
 
-.topLeftLogo {
-  padding: 2vw;
+.topLeftLogo:hover {
+  background: linear-gradient(to bottom, #1f1f1f, rgb(139, 139, 139));
+  animation: navHover 2s linear;
+  cursor: pointer;
+}
+
+.topLeftLogo:active {
+  box-shadow: 2px 0px grey;
 }
 
 .navbar {
@@ -103,6 +109,10 @@
   background: linear-gradient(to bottom, #1f1f1f, rgb(139, 139, 139));
   animation: navHover 2s linear;
   cursor: pointer;
+}
+
+.navbar div:active {
+  box-shadow: 2px 0px grey;
 }
 
 @keyframes navHover {
@@ -210,12 +220,6 @@
   overflow: hidden;
 }
 
-.aboutContainer {
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  grid-template-rows: 2fr 1fr;
-}
-
 @media only screen and (min-height: 750px) {
   .profPic {
     display: flex;
@@ -277,12 +281,6 @@
     vertical-align: center;
     padding-top: 26vh;
     overflow: hidden;
-  }
-
-  .aboutContainer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    grid-template-rows: 2fr 1fr;
   }
 }
 
@@ -348,10 +346,70 @@
     padding-top: 28vh;
     overflow: hidden;
   }
+}
 
-  .aboutContainer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    grid-template-rows: 2fr 1fr;
+.aboutContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.aboutProfPic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.aboutBio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutSkills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutExperiences {
+}
+
+.hoverForSkills {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 1fr 4fr;
+}
+
+.hoverForExperiences {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 4fr 1fr;
+}
+
+.hoverArea {
+  background-color: #464646;
+  color: white;
+  font-size: 1em;
+  font-family: helvetica;
+  border-radius: 10px;
+  animation: 4s linear infinite hoverToExpand;
+}
+
+@keyframes hoverToExpand {
+  0% {
+    transform: scaleX(100%);
+    transform: scaleY(100%);
+  }
+  50% {
+    transform: scaleX(120%);
+    transform: scaleY(120%);
+  }
+  100% {
+    transform: scaleX(100%);
+    transform: scaleY(100%);
+
   }
 }
