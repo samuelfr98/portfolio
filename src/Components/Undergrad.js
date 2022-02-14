@@ -1,10 +1,23 @@
+import NavLoader from "./NavLoader";
+import { useState, useEffect } from "react";
+
 
 const Undergrad = () => {
-    return (
-        <div>
-            <h1>Undergrad</h1>
-        </div>
-    )
-}
+  // For load in effect
+  const [isLoading, setLoading] = useState(true);
 
-export default Undergrad
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1090);
+  }, []);
+
+  return (
+    <div>
+      {isLoading ? <NavLoader page="about" /> : ""}
+      <h1>Undergrad</h1>
+    </div>
+  );
+};
+
+export default Undergrad;

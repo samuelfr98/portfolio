@@ -1,9 +1,8 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
-import homeBio from "../Images/homeBio.png";
 
 
-const BioCard = () => {
+const ExperiencesCard = ({experience}) => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const ref = useRef();
@@ -30,8 +29,8 @@ const BioCard = () => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 20).toFixed(0);
-    const yDegrees = (y / 40).toFixed(0);
+    const xDegrees = (x / 6).toFixed(0);
+    const yDegrees = (y / 6).toFixed(0);
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -40,10 +39,10 @@ const BioCard = () => {
   };
 
   return (
-    <div className="cardContainer">
+    <div className="expCardContainer">
       <div></div>
       <div
-        className="card"
+        className="expCard"
         ref={ref}
         onMouseMove={() => onLogo()}
         onMouseLeave={() => {
@@ -52,14 +51,11 @@ const BioCard = () => {
       >
         <div>
           {/* <h1>Sam Friedman</h1> */}
-          <img
-              src={homeBio}
-              height="250vh"
-            />
+          {experience}
         </div>
       </div>
     </div>
   );
 };
 
-export default BioCard;
+export default ExperiencesCard;

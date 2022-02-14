@@ -1,6 +1,6 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
-import skills from "../Images/skillsChartDraft.jpeg";
+import skills from "../Images/skillsChartDraft.png";
 
 
 const SkillsCard = () => {
@@ -30,9 +30,8 @@ const SkillsCard = () => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 20).toFixed(0);
+    const xDegrees = (x / 40).toFixed(0);
     const yDegrees = (y / 20).toFixed(0);
-    console.log(x)
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -56,6 +55,7 @@ const SkillsCard = () => {
           <img
               src={skills}
               height="360vh"
+              width="640vw"
               object-fit="cover"
               overflow="hidden"
             />

@@ -17,11 +17,14 @@ import Contact from "./Contact";
 import BioCard from "./BioCard";
 import BlockLetterLogo from "../Images/blockLetterInitialsWithBackground.jpeg";
 import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
+import githubIcon from "../Images/githubIcon.jpeg";
+import emailIcon from "../Images/emailIcon.jpeg";
+import linkedInIcon from "../Images/linkedInIcon.jpeg";
 
 const ModernApp = ({ downgradeTheme }) => {
   const [isLoading, setLoading] = useState(true);
   const [picSlide, setPicSlide] = useState(true);
-  const [scrollY, setScrollY] = useState(0);
+  const [revisit, setRevisit] = useState(true);
   const [nav, setNav] = useState({
     about: false,
     undergrad: false,
@@ -134,7 +137,12 @@ const ModernApp = ({ downgradeTheme }) => {
       <div className="modernContainer">
         <div className="topBar">
           <div className="topLeftLogo" onClick={() => changePage("home")}>
-            <img src={BlockLetterLogo} height="75vh"overflow="hidden" padding="2px"/>
+            <img
+              src={BlockLetterLogo}
+              height="75vh"
+              overflow="hidden"
+              padding="2px"
+            />
             {/* <Logo /> */}
           </div>
           <div className="navbar">
@@ -146,7 +154,18 @@ const ModernApp = ({ downgradeTheme }) => {
             <div onClick={() => downgradeTheme("retro")}>retro</div>
           </div>
           <div></div>
-          <div>Contact buttons</div>
+          <div className="contactIcons">
+            <div></div>
+            <div className="linkedInIcon" onClick={() => window.open("https://www.linkedin.com/in/sam-friedman-b8852118a", "_blank").focus()}>
+              <img src={linkedInIcon} />
+            </div>
+            <div className="githubIcon"  onClick={() => window.open("https://github.com/samuelfr98", "_blank").focus()}>
+              <img src={githubIcon} />
+            </div>
+            <div className="emailIcon" onClick={() => changePage("contact")}>
+              <img src={emailIcon} />
+            </div>
+          </div>
         </div>
         <div className="display">
           {nav.about ? (

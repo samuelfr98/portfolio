@@ -26,7 +26,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 6450);
+    }, 6490);
   }, []);
 
   const redirect = (url) => {

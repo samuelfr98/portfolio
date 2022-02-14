@@ -32,7 +32,6 @@ const HeadStandCard = () => {
   const onLogo = () => {
     const xDegrees = (x / 10).toFixed(0);
     const yDegrees = (y / 20).toFixed(0);
-    console.log(x)
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -55,7 +54,7 @@ const HeadStandCard = () => {
           {/* <h1>Sam Friedman</h1> */}
           <img
               src={headstand}
-              height="300vh"
+              height="240vh"
               object-fit="cover"
               overflow="hidden"
             />

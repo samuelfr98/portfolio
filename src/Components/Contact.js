@@ -1,7 +1,19 @@
+import { useState, useEffect } from "react";
+import NavLoader from "./NavLoader";
 
 const Contact = () => {
-    return (
-        <div className="contact">
+// For load in effect
+const [isLoading, setLoading] = useState(true);
+
+useEffect(() => {
+  setTimeout(() => {
+    setLoading(false);
+  }, 1090);
+}, []);
+
+return (
+  <div className="contact">
+    {isLoading ? <NavLoader page="about" /> : ""}
         <form action="" method="" enctype="" >
           Name:<br/>
           <input type="text"/><br/>

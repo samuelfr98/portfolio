@@ -32,7 +32,6 @@ const Card = () => {
   const onLogo = () => {
     const xDegrees = (x / 20).toFixed(0);
     const yDegrees = (y / 40).toFixed(0);
-    console.log(x)
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;

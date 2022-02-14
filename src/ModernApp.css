@@ -142,12 +142,37 @@
   transition: transform 2s;
 }
 
+.contactIcons {
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.contactIcons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactIcons div:hover {
+  background: linear-gradient(to bottom, #1f1f1f, rgb(139, 139, 139));
+  animation: navHover 2s linear;
+  cursor: pointer;
+}
+
+.contactIcons img {
+  height: 6vh;
+  width: 3vw;
+}
+
 .display {
+  /* height: calc(88vh - 10px);
+  width: calc(100vw - 10px); */
   height: 88vh;
   width: 100vw;
 }
 
-.contantContainer {
+.contentContainer {
   height: 88vh;
   width: 100vw;
 }
@@ -352,14 +377,16 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
 }
 
 .aboutProfPic {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   padding-top: 20px;
+  height: auto;
+  width: auto;
 }
 
 .aboutBio {
@@ -370,22 +397,32 @@
 
 .aboutSkills {
   display: flex;
-  align-items: center;
+  align-items: bottom;
   justify-content: center;
+  overflow: hidden;
+  height: 50vh;
 }
 
 .aboutExperiences {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: bottom;
+  justify-content: center;
+  overflow: hidden;
+  margin: 20px;
+  height: 50vh;
 }
 
 .hoverForSkills {
   display: grid;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 4fr;
 }
 
 .hoverForExperiences {
   display: grid;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 4fr 1fr;
 }
 
@@ -396,6 +433,7 @@
   font-family: helvetica;
   border-radius: 10px;
   animation: 4s linear infinite hoverToExpand;
+  
 }
 
 @keyframes hoverToExpand {
@@ -411,5 +449,47 @@
     transform: scaleX(100%);
     transform: scaleY(100%);
 
+  }
+}
+
+.expCard {
+  height: 14vh;
+  width: 12vw;
+  border-radius: 30px;
+  /* background-image: linear-gradient(to right, #a7cae1, white); */
+  background: #a7cae1;
+  color:rgb(88, 88, 88);
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding-top: 2vh;
+}
+
+.expCard:hover {
+  /* background: #a7cae1; */
+  background-image: linear-gradient(to right, #a7cae1, #b5d9f0);
+  animation: expHover 4s linear;
+  cursor: pointer;
+  border: 1px solid lightgray;
+}
+
+.expCard:active {
+  box-shadow: 2px 0px grey;
+}
+
+.textLoadContainer {
+  height: 100vh;
+  width: minmax(0px, 100vw);
+  overflow: hidden;
+  animation: 1s linear 0.1s textLoadContainer;
+}
+
+@keyframes textLoadContainer {
+  0% {
+    height: 100vh;
+    width: 100vw;
+  }
+  100% {
+    height: 1px;
   }
 }
