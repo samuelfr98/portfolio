@@ -1,6 +1,6 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
-import headstand from "../Images/headStandPhotoWithFrame.jpeg"
+import headstand from "../Images/headStandPhotoWithFrame.png"
 
 
 const HeadStandCard = () => {

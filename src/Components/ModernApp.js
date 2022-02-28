@@ -17,9 +17,9 @@ import Contact from "./Contact";
 import BioCard from "./BioCard";
 import BlockLetterLogo from "../Images/blockLetterInitialsWithBackground.png";
 import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
-import githubIcon from "../Images/githubIcon.jpeg";
-import emailIcon from "../Images/emailIcon.jpeg";
-import linkedInIcon from "../Images/linkedInIcon.jpeg";
+import githubIcon from "../Images/githubIcon.png";
+import emailIcon from "../Images/emailIcon.png";
+import linkedInIcon from "../Images/linkedInIcon.png";
 import MyCursor from "./CustomCursor/MyCursor";
 
 const ModernApp = ({ downgradeTheme }, { children }) => {
