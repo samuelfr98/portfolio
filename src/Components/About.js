@@ -9,6 +9,7 @@ import NavLoader from "./NavLoader";
 const About = () => {
   const [skills, setSkills] = useState(false);
   const [experiences, setExperiences] = useState(false);
+  const [mainAbout, setMainAbout] = useState(true);
 
   // For load in effect
   const [isLoading, setLoading] = useState(true);
@@ -20,40 +21,29 @@ const About = () => {
   }, []);
 
   return (
-    <div>
-      {isLoading ? <NavLoader page='about' /> : ""}
-      <div className="aboutContainer">
-        <div className="aboutProfPic">
-          <HeadStandCard />
-        </div>
-        <div className="aboutBio">
-          <p>
-            Sam Friedman grew up in Charlotte, NC.
-            <br />
-            <br />
-            Whether he is developing an app, competing in a start-up
-            competition, or ascending a challenging rock climbing route, he
-            loves tackling problems.
-          </p>
-        </div>
-        {skills ? (
-          <div className="aboutSkills" onMouseLeave={() => setSkills(false)}>
+    <div className="container">
+      {isLoading ? <NavLoader page="about" /> : ""}
+      {skills ? (
+        <>
+          <div className="aboutSkills">
             <SkillsCard />
-          </div>
-        ) : (
-          <div className="hoverForSkills">
-            <div></div>
-            <div></div>{" "}
-            <div className="hoverArea" onMouseEnter={() => setSkills(true)}>
-              Hover for skills
+            <div
+              className="returnToAboutRight"
+              onClick={() => {
+                setSkills(false);
+                setMainAbout(true);
+              }}
+            >
+              Main About     &#8680;
             </div>
           </div>
-        )}
-        {experiences ? (
-          <div
-            className="aboutExperiences"
-            onMouseLeave={() => setExperiences(false)}
-          >
+        </>
+      ) : (
+        ""
+      )}
+      {experiences ? (
+        <div className="experiencesContainer">
+          <div className="aboutExperiences">
             <div>
               <ExperiencesCard experience="Leading" />
             </div>
@@ -73,20 +63,62 @@ const About = () => {
               <ExperiencesCard experience="Overcoming" />
             </div>
           </div>
-        ) : (
-          <div className="hoverForExperiences">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div
+            className="returnToAboutLeft"
+            onClick={() => {
+              setExperiences(false);
+              setMainAbout(true);
+            }}
+          >
+             &#8678; Main About 
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      {mainAbout ? (
+        <div className="aboutContainer">
+          <div></div>
+          <div></div>
+          <div className="aboutProfPic">
+            <HeadStandCard />
+          </div>
+          <div className="aboutBio">
+            <p>
+              Sam Friedman grew up in Charlotte, NC.
+              <br />
+              <br />
+              Whether he is developing an app, competing in a start-up
+              competition, or ascending a challenging rock climbing route, he
+              loves tackling problems.
+            </p>
+          </div>
+          <div className="hoverForSkills">
             <div
-              className="hoverArea"
-              onMouseEnter={() => setExperiences(true)}
+              className="hoverAreaSkills"
+              onClick={() => {
+                setSkills(true);
+                setMainAbout(false);
+              }}
             >
-              Hover for experiences
+              &#8678; Skills
             </div>
           </div>
-        )}
-      </div>
+          <div className="hoverForExperiences">
+            <div
+              className="hoverAreaExp"
+              onClick={() => {
+                setExperiences(true);
+                setMainAbout(false);
+              }}
+            >
+              Experiences &#8680; 
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

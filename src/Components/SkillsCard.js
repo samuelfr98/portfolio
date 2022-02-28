@@ -30,8 +30,8 @@ const SkillsCard = () => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 40).toFixed(0);
-    const yDegrees = (y / 20).toFixed(0);
+    const xDegrees = (x / 80).toFixed(0);
+    const yDegrees = (y / 30).toFixed(0);
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -54,8 +54,8 @@ const SkillsCard = () => {
           {/* <h1>Sam Friedman</h1> */}
           <img
               src={skills}
-              height="360vh"
-              width="640vw"
+              height="500vh"
+              width="840vw"
               object-fit="cover"
               overflow="hidden"
             />

@@ -20,8 +20,9 @@ import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
 import githubIcon from "../Images/githubIcon.jpeg";
 import emailIcon from "../Images/emailIcon.jpeg";
 import linkedInIcon from "../Images/linkedInIcon.jpeg";
+import MyCursor from "./CustomCursor/MyCursor";
 
-const ModernApp = ({ downgradeTheme }) => {
+const ModernApp = ({ downgradeTheme }, { children }) => {
   const [isLoading, setLoading] = useState(true);
   const [picSlide, setPicSlide] = useState(true);
   const [revisit, setRevisit] = useState(true);
@@ -103,7 +104,6 @@ const ModernApp = ({ downgradeTheme }) => {
   };
 
   const Home = () => {
-    console.log("ran again");
     return (
       <div className="contentContainer">
         <div className="content">
@@ -132,7 +132,31 @@ const ModernApp = ({ downgradeTheme }) => {
   };
 
   return (
-    <div className="global">
+    <div
+      className="global"
+      onMouseMove={(e) => {
+        const cursor = document.querySelector(".cursor");
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+      }}
+      onMouseDown={() => {
+        const cursor = document.querySelector(".cursor");
+        cursor.style.background = `#a7cae1`;
+        cursor.style.transform = `scale(0.5) translate(-82.5%, -82.5%)`
+        cursor.style.opacity = `80%`
+        cursor.style.border = `2px solid lightgray`
+      }}
+      onMouseUp={() => {
+        const cursor = document.querySelector(".cursor");
+        cursor.style.border = "";
+        cursor.style.background = "";
+        cursor.style.transform = `scale(1) translate(-50%, -50%)`
+        cursor.style.opacity = `60%`
+
+      }}
+    >
+      {/* Custom Cursor */}
+      <MyCursor />
       {isLoading ? <ModernAppLoader /> : ""}
       <div className="modernContainer">
         <div className="topBar">
@@ -156,10 +180,25 @@ const ModernApp = ({ downgradeTheme }) => {
           <div></div>
           <div className="contactIcons">
             <div></div>
-            <div className="linkedInIcon" onClick={() => window.open("https://www.linkedin.com/in/sam-friedman-b8852118a", "_blank").focus()}>
+            <div
+              className="linkedInIcon"
+              onClick={() =>
+                window
+                  .open(
+                    "https://www.linkedin.com/in/sam-friedman-b8852118a",
+                    "_blank"
+                  )
+                  .focus()
+              }
+            >
               <img src={linkedInIcon} />
             </div>
-            <div className="githubIcon"  onClick={() => window.open("https://github.com/samuelfr98", "_blank").focus()}>
+            <div
+              className="githubIcon"
+              onClick={() =>
+                window.open("https://github.com/samuelfr98", "_blank").focus()
+              }
+            >
               <img src={githubIcon} />
             </div>
             <div className="emailIcon" onClick={() => changePage("contact")}>

@@ -1,9 +1,8 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
-import headstand from "../Images/headStandPhotoWithFrame.jpeg"
 
 
-const HeadStandCard = () => {
+const EmployeeCard = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const ref = useRef();
@@ -30,8 +29,8 @@ const HeadStandCard = () => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 20).toFixed(0);
-    const yDegrees = (y / 40).toFixed(0);
+    const xDegrees = (x / 10).toFixed(0);
+    const yDegrees = (y / 20).toFixed(0);
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -54,7 +53,7 @@ const HeadStandCard = () => {
           {/* <h1>Sam Friedman</h1> */}
           <img
               src={headstand}
-              height="400vh"
+              height="240vh"
               object-fit="cover"
               overflow="hidden"
             />
@@ -64,4 +63,4 @@ const HeadStandCard = () => {
   );
 };
 
-export default HeadStandCard;
+export default EmployeeCard;
