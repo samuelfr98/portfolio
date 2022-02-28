@@ -15,7 +15,7 @@ import Today from "./Today";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import BioCard from "./BioCard";
-import BlockLetterLogo from "../Images/blockLetterInitialsWithBackground.jpeg";
+import BlockLetterLogo from "../Images/blockLetterInitialsWithBackground.png";
 import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
 import githubIcon from "../Images/githubIcon.jpeg";
 import emailIcon from "../Images/emailIcon.jpeg";
