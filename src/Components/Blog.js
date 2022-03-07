@@ -1,8 +1,7 @@
-import NavLoader from "./NavLoader";
 import { useState, useEffect } from "react";
-import UndergradCard from "./UndergradCard";
+import NavLoader from "./NavLoader";
 
-const Undergrad = () => {
+const Blog = () => {
   // For load in effect
   const [isLoading, setLoading] = useState(true);
 
@@ -13,13 +12,11 @@ const Undergrad = () => {
   });
 
   return (
-    <div>
+    <div className="blog">
       {isLoading ? <NavLoader page="about" /> : ""}
-      <div className="undergrad">
-        <UndergradCard />
-      </div>
+      <div>Blog</div>
     </div>
   );
 };
 
-export default Undergrad;
+export default Blog;

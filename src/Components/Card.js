@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import samProfileImageBordered from "../Images/samProfileImageBordered.jpg";
 
 
+
 const Card = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
@@ -40,7 +41,7 @@ const Card = () => {
   };
 
   return (
-    <div className="cardContainer">
+    <div className="cardContainerProf">
       <div></div>
       <div
         className="card"

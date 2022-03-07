@@ -21,6 +21,7 @@ import githubIcon from "../Images/githubIcon.png";
 import emailIcon from "../Images/emailIcon.png";
 import linkedInIcon from "../Images/linkedInIcon.png";
 import MyCursor from "./CustomCursor/MyCursor";
+import Blog from "./Blog";
 
 const ModernApp = ({ downgradeTheme }, { children }) => {
   const [isLoading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
     today: false,
     projects: false,
     contact: false,
+    blog: false,
     home: true,
   });
 
@@ -53,6 +55,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: false,
+        blog: false,
         home: false,
       });
     else if (navClicked === "undergrad")
@@ -62,6 +65,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: false,
+        blog: false,
         home: false,
       });
     else if (navClicked === "today")
@@ -71,6 +75,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         today: true,
         projects: false,
         contact: false,
+        blog: false,
         home: false,
       });
     else if (navClicked === "projects")
@@ -80,6 +85,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: true,
         contact: false,
+        blog: false,
         home: false,
       });
     else if (navClicked === "contact")
@@ -89,6 +95,17 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: true,
+        blog: false,
+        home: false,
+      });
+    else if (navClicked === "blog")
+      setNav({
+        about: false,
+        undergrad: false,
+        today: false,
+        projects: false,
+        contact: false,
+        blog: true,
         home: false,
       });
     else if (navClicked === "home")
@@ -98,6 +115,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: false,
+        blog: false,
         home: true,
       });
     Home();
@@ -142,17 +160,16 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       onMouseDown={() => {
         const cursor = document.querySelector(".cursor");
         cursor.style.background = `#a7cae1`;
-        cursor.style.transform = `scale(0.5) translate(-82.5%, -82.5%)`
-        cursor.style.opacity = `80%`
-        cursor.style.border = `2px solid lightgray`
+        cursor.style.transform = `scale(0.5) translate(-82.5%, -82.5%)`;
+        cursor.style.opacity = `80%`;
+        cursor.style.border = `2px solid lightgray`;
       }}
       onMouseUp={() => {
         const cursor = document.querySelector(".cursor");
         cursor.style.border = "";
         cursor.style.background = "";
-        cursor.style.transform = `scale(1) translate(-50%, -50%)`
-        cursor.style.opacity = `60%`
-
+        cursor.style.transform = `scale(1) translate(-50%, -50%)`;
+        cursor.style.opacity = `60%`;
       }}
     >
       {/* Custom Cursor */}
@@ -175,6 +192,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
             <div onClick={() => changePage("today")}>today</div>
             <div onClick={() => changePage("projects")}>projects</div>
             <div onClick={() => changePage("contact")}>contact</div>
+            <div onClick={() => changePage("blog")}>blog</div>
             <div onClick={() => downgradeTheme("retro")}>retro</div>
           </div>
           <div></div>
@@ -217,6 +235,8 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
             <Projects />
           ) : nav.contact ? (
             <Contact />
+          ) : nav.blog ? (
+            <Blog />
           ) : nav.home ? (
             Home()
           ) : (

@@ -14,7 +14,7 @@ useEffect(() => {
 return (
   <div className="contact">
     {isLoading ? <NavLoader page="about" /> : ""}
-        <form action="" method="" enctype="" >
+        <form action="" method="" encType="" >
           Name:<br/>
           <input type="text"/><br/>
           Email:<br/>

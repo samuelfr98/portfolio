@@ -1,7 +1,9 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 
-const ExperiencesCard = ({ experience }) => {
+import onecard from "../Images/undergradOneCard.png";
+
+const UndergradCard = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   // Is front side showing? T/F
@@ -31,8 +33,8 @@ const ExperiencesCard = ({ experience }) => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 24).toFixed(0);
-    const yDegrees = (y / 8).toFixed(0);
+    const xDegrees = (x / 100).toFixed(0);
+    const yDegrees = (y / 70).toFixed(0);
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.mozTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -40,42 +42,15 @@ const ExperiencesCard = ({ experience }) => {
     ref.current.style.oTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
   };
 
-  const summary = () => {
-    if (experience == "Leading") {
-      return (
-        // 'Sonder through COVID, rock climbing coach'
-        <p>
-          In highschool, Sam was a leader on his competitive rock climbing team,
-          and coached younger climbers on Wednesday nights his senior year.{" "}
-          <br />
-          <br />
-          At UNC, Sam was on the executive board for The Sonder Market, a UNC
-          club dedicated to sustainably combatting food inaccessibility. <br />
-          <br /> At work today, Sam tutors coworkers on Java design principles.
-        </p>
-      );
-    }
-    if (experience == "Collaborating") {
-      return "Internships, working virtually, Makeathon";
-    }
-    if (experience == "Exploring") {
-      return "Rock climbing, sky diving, moving to LA, trying new technologies";
-    }
-    if (experience == "Learning") {
-      return "Certifications, side projects, passion";
-    }
-    if (experience == "Interning") {
-      return "Start ups, LEAN methodology, design thinking, inspiration";
-    }
-    if (experience == "Overcoming") {
-      return "Sciatica, COVID, anxiety, growth";
-    }
+  const info = () => {
+    // return major, minor, etc.
+    return <div>Major, minor, etc.</div>
   };
 
   return (
-    <div className="expCardContainer">
+    <div className="undergradCardContainer">
       <div
-        className="expCard"
+        className="undergradCard"
         ref={ref}
         onMouseMove={
           side
@@ -107,11 +82,19 @@ const ExperiencesCard = ({ experience }) => {
               }
         }
       >
-        <div className="front">{experience}</div>
-        <div className="back">{summary()}</div>
+        <div className="undergradFront">
+            <img src={onecard} 
+            position="absolute"
+            height="100%"
+            width="100%"
+            />
+
+
+        </div>
+        <div className="undergradBack">{info()}</div>
       </div>
     </div>
   );
 };
 
-export default ExperiencesCard;
+export default UndergradCard;
