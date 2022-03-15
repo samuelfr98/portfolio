@@ -22,6 +22,7 @@ import emailIcon from "../Images/emailIcon.png";
 import linkedInIcon from "../Images/linkedInIcon.png";
 import MyCursor from "./CustomCursor/MyCursor";
 import Blog from "./Blog";
+import UndergradCard from "./UndergradCard";
 
 const ModernApp = ({ downgradeTheme }, { children }) => {
   const [isLoading, setLoading] = useState(true);

@@ -7,3 +7,4 @@ const NavLoader = () => {
 };
 
 export default NavLoader;
+ 

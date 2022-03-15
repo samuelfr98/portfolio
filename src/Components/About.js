@@ -5,6 +5,8 @@ import HeadStandCard from "./HeadStandCard";
 import SkillsCard from "./SkillsCard";
 import ExperiencesCard from "./ExperiencesCard";
 import NavLoader from "./NavLoader";
+import RightLoader from "./RightLoader";
+import LeftLoader from "./LeftLoader";
 
 const About = () => {
   const [skills, setSkills] = useState(false);
@@ -13,6 +15,7 @@ const About = () => {
 
   // For load in effect
   const [isLoading, setLoading] = useState(true);
+  const [sideLoading, setSideLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,11 +23,20 @@ const About = () => {
     }, 1090);
   }, []);
 
+  // When switching horizontal pages, for conditional rendering load container
+  const sideLoader = () => {
+    setSideLoading(true);
+    setTimeout(() => {
+      setSideLoading(false);
+    }, 1090);
+  };
+
   return (
     <div className="container">
       {isLoading ? <NavLoader page="about" /> : ""}
       {skills ? (
         <>
+          {/* <LeftLoader /> */}
           <div className="aboutSkills">
             <SkillsCard />
             <div
@@ -34,7 +46,7 @@ const About = () => {
                 setMainAbout(true);
               }}
             >
-              Main About     &#8680;
+              Main About &#8680;
             </div>
           </div>
         </>
@@ -42,37 +54,40 @@ const About = () => {
         ""
       )}
       {experiences ? (
-        <div className="experiencesContainer">
-          <div className="aboutExperiences">
-            <div>
-              <ExperiencesCard experience="Leading" />
+        <>
+          {/* <RightLoader /> */}
+          <div className="experiencesContainer">
+            <div className="aboutExperiences">
+              <div>
+                <ExperiencesCard experience="Leading" />
+              </div>
+              <div>
+                <ExperiencesCard experience="Collaborating" />
+              </div>
+              <div>
+                <ExperiencesCard experience="Exploring" />
+              </div>
+              <div>
+                <ExperiencesCard experience="Learning" />
+              </div>
+              <div>
+                <ExperiencesCard experience="Interning" />
+              </div>
+              <div>
+                <ExperiencesCard experience="Overcoming" />
+              </div>
             </div>
-            <div>
-              <ExperiencesCard experience="Collaborating" />
-            </div>
-            <div>
-              <ExperiencesCard experience="Exploring" />
-            </div>
-            <div>
-              <ExperiencesCard experience="Learning" />
-            </div>
-            <div>
-              <ExperiencesCard experience="Interning" />
-            </div>
-            <div>
-              <ExperiencesCard experience="Overcoming" />
+            <div
+              className="returnToAboutLeft"
+              onClick={() => {
+                setExperiences(false);
+                setMainAbout(true);
+              }}
+            >
+              &#8678; Main About
             </div>
           </div>
-          <div
-            className="returnToAboutLeft"
-            onClick={() => {
-              setExperiences(false);
-              setMainAbout(true);
-            }}
-          >
-             &#8678; Main About 
-          </div>
-        </div>
+        </>
       ) : (
         ""
       )}
@@ -112,7 +127,7 @@ const About = () => {
                 setMainAbout(false);
               }}
             >
-              Experiences &#8680; 
+              Experiences &#8680;
             </div>
           </div>
         </div>
