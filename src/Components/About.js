@@ -1,61 +1,102 @@
 import "../ModernApp.css";
 // import skillsChartDraft from "../Images/skillsChartDraft.jpeg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import HeadStandCard from "./HeadStandCard";
 import SkillsCard from "./SkillsCard";
 import ExperiencesCard from "./ExperiencesCard";
 import NavLoader from "./NavLoader";
-import RightLoader from "./RightLoader";
-import LeftLoader from "./LeftLoader";
+import { IconSwapCalls } from "@aws-amplify/ui-react";
+import AboutCard from "./AboutCard";
 
 const About = () => {
-  const [skills, setSkills] = useState(false);
-  const [experiences, setExperiences] = useState(false);
-  const [mainAbout, setMainAbout] = useState(true);
-
-  // For load in effect
+// For load in effect
   const [isLoading, setLoading] = useState(true);
-  const [sideLoading, setSideLoading] = useState(false);
+  // 1 --> show arrow
+  // 0 --> hide arrow
+  const [arrows, setArrows] = useState([1,1])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (isLoading) {
+      document.getElementById("dot1").style.background = `white`;
+      document.getElementById("dot2").style.background = `#a7cae1`;
+      document.getElementById("dot3").style.background = `white`;
+
+      // Need to load to main about page, not skills
+      document.getElementById("container").scrollLeft = 1400;
+      console.log(document.getElementById("container").scrollLeft);
+
+    }
     setTimeout(() => {
       setLoading(false);
     }, 1090);
   }, []);
 
-  // When switching horizontal pages, for conditional rendering load container
-  const sideLoader = () => {
-    setSideLoading(true);
-    setTimeout(() => {
-      setSideLoading(false);
-    }, 1090);
+  const swapL = () => {
+    // -1000
+    console.log(document.getElementById("container").scrollLeft);
+
+    if (document.getElementById("container").scrollLeft > 2000) {
+      document.getElementById("container").scrollLeft = 1400; // For Safari
+      document.getElementById("container").scrollLeft = 1400; // For Chrome, Firefox, IE and Opera
+
+      document.getElementById("dot1").style.background = `white`;
+      document.getElementById("dot2").style.background = `#a7cae1`;
+      document.getElementById("dot3").style.background = `white`;
+      setArrows([1,1])
+    } else {
+      document.getElementById("container").scrollLeft = 0; // For Safari
+      document.getElementById("container").scrollLeft = 0; // For Chrome, Firefox, IE and Opera
+
+      document.getElementById("dot1").style.background = `#a7cae1`;
+      document.getElementById("dot2").style.background = `white`;
+      document.getElementById("dot3").style.background = `white`;
+      setArrows([0,1])
+    }
+  };
+
+  const swapR = () => {
+    // +1000
+    console.log(document.getElementById("container").scrollLeft);
+
+    if (document.getElementById("container").scrollLeft < 1) {
+      document.getElementById("container").scrollLeft = 1400; // For Safari
+      document.getElementById("container").scrollLeft = 1400; // For Chrome, Firefox, IE and Opera
+
+      document.getElementById("dot1").style.background = `white`;
+      document.getElementById("dot2").style.background = `#a7cae1`;
+      document.getElementById("dot3").style.background = `white`;
+      setArrows([1,1])
+    } else {
+      document.getElementById("container").scrollLeft = 2800; // For Safari
+      document.getElementById("container").scrollLeft = 2800; // For Chrome, Firefox, IE and Opera
+
+      document.getElementById("dot1").style.background = `white`;
+      document.getElementById("dot2").style.background = `white`;
+      document.getElementById("dot3").style.background = `#a7cae1`;
+      setArrows([1,0])
+    }
   };
 
   return (
-    <div className="container">
-      {isLoading ? <NavLoader page="about" /> : ""}
-      {skills ? (
-        <>
-          {/* <LeftLoader /> */}
+    <div className="wrap" id="wrap">
+      <div className="container" id="container">
+        {isLoading ? <NavLoader page="about" /> : ""}
+
+        {isLoading ? "" : <div className="horiPage" id="1">
           <div className="aboutSkills">
             <SkillsCard />
-            <div
-              className="returnToAboutRight"
-              onClick={() => {
-                setSkills(false);
-                setMainAbout(true);
-              }}
-            >
-              Main About &#8680;
-            </div>
           </div>
-        </>
-      ) : (
-        ""
-      )}
-      {experiences ? (
-        <>
-          {/* <RightLoader /> */}
+        </div>}
+
+        <div className="horiPage" id="2">
+
+          <div className="aboutMainContainer">
+            <AboutCard />
+          </div>
+          
+        </div>
+
+        <div className="horiPage" id="3">
           <div className="experiencesContainer">
             <div className="aboutExperiences">
               <div>
@@ -77,63 +118,30 @@ const About = () => {
                 <ExperiencesCard experience="Overcoming" />
               </div>
             </div>
-            <div
+            {arrows[0] == 1 ? (<div
               className="returnToAboutLeft"
               onClick={() => {
-                setExperiences(false);
-                setMainAbout(true);
+                swapL();
               }}
-            >
-              &#8678; Main About
+            > 
+              &#8678;
+            </div>) : ''}
+            <div className="dots">
+              <div className="dot1" id="dot1"></div>
+              <div className="dot2" id="dot2"></div>
+              <div className="dot3" id="dot3"></div>
             </div>
-          </div>
-        </>
-      ) : (
-        ""
-      )}
-      {mainAbout ? (
-        <div className="aboutContainer">
-          <div></div>
-          <div></div>
-          <div className="aboutProfPic">
-            <HeadStandCard />
-          </div>
-          <div className="aboutBio">
-            <p>
-              Sam Friedman grew up in Charlotte, NC.
-              <br />
-              <br />
-              Whether he is developing an app, competing in a start-up
-              competition, or ascending a challenging rock climbing route, he
-              loves tackling problems.
-            </p>
-          </div>
-          <div className="hoverForSkills">
-            <div
-              className="hoverAreaSkills"
+            {arrows[1] == 1 ? (<div
+              className="returnToAboutRight"
               onClick={() => {
-                setSkills(true);
-                setMainAbout(false);
+                swapR();
               }}
             >
-              &#8678; Skills
-            </div>
-          </div>
-          <div className="hoverForExperiences">
-            <div
-              className="hoverAreaExp"
-              onClick={() => {
-                setExperiences(true);
-                setMainAbout(false);
-              }}
-            >
-              Experiences &#8680;
-            </div>
+              &#8680;
+            </div>) : ''}
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      </div>
     </div>
   );
 };

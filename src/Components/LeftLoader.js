@@ -4,4 +4,4 @@ const LeftLoader = () => {
     return <div className="leftLoadContainer"></div>
 }
 
-export default LeftLoader
+export default LeftLoader 

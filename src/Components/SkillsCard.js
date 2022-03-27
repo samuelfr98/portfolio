@@ -11,7 +11,7 @@ const SkillsCard = () => {
   useEffect(() => {
     // save ref before cleanup resets to null
     const instance = ref.current;
-
+ 
     const update = (e) => {
       const right = instance.getBoundingClientRect().right;
       const top = instance.getBoundingClientRect().top;

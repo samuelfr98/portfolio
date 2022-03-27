@@ -56,7 +56,7 @@
 }
 
 /* Custom cursor -> prevent default cursor */
-.global > *  {
+.global > * {
   cursor: none !important;
 }
 
@@ -266,7 +266,6 @@
   overflow: hidden;
 }
 
-
 /* For Safari */
 /* .cardContainerProf {
   display: grid;
@@ -422,7 +421,9 @@
   align-items: top;
   text-align: left;
   padding: 10vh;
+  width: 40vw;
   padding-left: none;
+  overflow: visible;
 }
 
 .aboutSkills {
@@ -485,7 +486,7 @@
 /*  */
 .expCardContainer {
   background-color: transparent;
-  perspective: 1000px; 
+  perspective: 1000px;
   height: 30vh;
   width: 30vw;
 }
@@ -524,7 +525,8 @@
 }
 
 /* Position the front and back side */
-.front, .back {
+.front,
+.back {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -566,10 +568,20 @@
 
 .undergradCardContainer {
   background-color: transparent;
-  perspective: 1000px; 
+  perspective: 1000px;
   padding-top: 10vh;
   height: 60vh;
   width: 60vw;
+}
+
+.undergradCardContainerAbout {
+  background-color: transparent;
+  perspective: 1000px;
+  padding-top: 10vh;
+  height: 60vh;
+  width: 66vw;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
 }
 
 .undergradCard {
@@ -606,7 +618,8 @@
 }
 
 /* Position the front and back side */
-.undergradFront, .undergradBack {
+.undergradFront,
+.undergradBack {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -627,19 +640,94 @@
   overflow: hidden;
   object-fit: cover;
   position: relative;
-
 }
 
 /* Style the back side */
 .undergradBack {
   transform: rotateY(180deg);
-  background: #464646;
+  background: #a7cae1;
+  opacity: 60%;
   color: white;
   /* height: 70vh;
   width: 80vw;
   display: flex;
   align-self: center;
   justify-self: center; */
+}
+
+.nameSpot:hover,
+.uncSpot:hover,
+.picSpot:hover,
+.majorSpot:hover,
+.minorSpot:hover,
+.sonderSpot:hover,
+.climbingSpot:hover {
+  opacity: 50%;
+  background-color: #555;
+  box-shadow: 0 0 2px 2px #555;
+}
+
+.nameSpot {
+  position: absolute;
+  top: 21vh;
+  left: 21vw;
+  z-index: 10;
+  height: 4.5vh;
+  width: 20.8vw;
+}
+
+.uncSpot {
+  position: absolute;
+  top: 1.8vh;
+  left: 1.8vw;
+  z-index: 10;
+  height: 16vh;
+  width: 40vw;
+}
+
+.picSpot {
+  position: absolute;
+  top: 20vh;
+  left: 2vw;
+  z-index: 10;
+  height: 30vh;
+  width: 15vw;
+}
+
+.majorSpot {
+  position: absolute;
+  top: 26.5vh;
+  left: 23vw;
+  z-index: 10;
+  height: 3vh;
+  width: 18vw;
+}
+
+.minorSpot {
+  position: absolute;
+  top: 31vh;
+  left: 23vw;
+  z-index: 10;
+  height: 3.5vh;
+  width: 34vw;
+}
+
+.sonderSpot {
+  position: absolute;
+  top: 51.4vh;
+  left: 2vw;
+  z-index: 10;
+  height: 2vh;
+  width: 25vw;
+}
+
+.climbingSpot {
+  position: absolute;
+  top: 54.2vh;
+  left: 2vw;
+  z-index: 10;
+  height: 2vh;
+  width: 15vw;
 }
 
 /*  */
@@ -662,9 +750,33 @@
   }
 }
 
-.container {
+.wrap {
   height: 100%;
   width: 100%;
+}
+
+.container {
+  display: inline-block;
+  height: 88vh;
+  width: 100vw;
+  white-space: nowrap;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.horiPage {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+
+  overflow: hidden;
+  scroll-snap-align: start;
 }
 
 /* About page horizontal switch */
@@ -704,52 +816,82 @@
 
 /*  */
 
-
 .returnToAboutRight {
-  background-color: #464646;
-  color: white;
+  /* background-color: #464646; */
+  background-image: linear-gradient(to right, #fff, #464646);
+  opacity: 40%;
+  color: black;
   font-size: 1em;
   font-family: helvetica;
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: end;
-  height: 10vh;
-  width: 10vw;
-  border-top-left-radius: 16px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  height: 88vh;
+  width: 2vw;
 }
 
 .returnToAboutLeft {
-  background-color: #464646;
-  color: white;
+  /* background-color: #464646; */
+  background-image: linear-gradient(to left, #fff, #464646);
+  opacity: 40%;
+  color: black;
   font-size: 1em;
   font-family: helvetica;
   justify-content: center;
   display: flex;
   align-items: center;
-  /* align-self: end;
-  justify-self: start; */
   position: absolute;
   bottom: 0;
   left: 0;
-
-  height: 10vh;
-  width: 10vw;
-  border-top-right-radius: 16px;
+  height: 88vh;
+  width: 2vw;
 }
 
 .returnToAboutRight:hover,
-.hoverAreaSkills:hover,
-.hoverAreaExp:hover,
 .returnToAboutLeft:hover {
-  animation: aboutMainHover 1s linear;
-  /* cursor: pointer; */
+  animation: 0.5s linear aboutSlide;
+  width: 4vw;
+  opacity: 80%;
+}
+
+@keyframes aboutSlide {
+  0% {
+    width: 2vw;
+  }
+  100% {
+    width: 4vw;
+    opacity: 80%;
+  }
 }
 
 .returnToAboutRight:active,
-.hoverArea:active,
 .returnToAboutLeft:active {
-  opacity: 60%;
+  width: 4vw;
+  opacity: 50%;
+}
+
+.dots {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  align-self: center;
+  width: 8vw;
+  height: 2vw;
+  position: absolute;
+  left: calc(50% - 5vw);
+  bottom: 5%;
+}
+
+.dots div {
+  height: 2vw;
+  width: 2vw;
+  border: solid 3px #a7cae1;
+  border-radius: 100px;
+  margin: 5px;
 }
 
 @keyframes aboutMainHover {
@@ -787,7 +929,6 @@
   }
 }
 
-
 /*  TodayCard styling */
 
 .today {
@@ -797,7 +938,7 @@
 
 .todayCardContainer {
   background-color: transparent;
-  perspective: 1000px; 
+  perspective: 1000px;
   padding-top: 10vh;
   height: 70vh;
   width: 30vw;
@@ -838,7 +979,8 @@
 }
 
 /* Position the front and back side */
-.undergradFront, .undergradBack {
+.undergradFront,
+.undergradBack {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -859,14 +1001,15 @@
   overflow: hidden;
   object-fit: cover;
   position: relative;
-
 }
 
 /* Style the back side */
 .undergradBack {
   transform: rotateY(180deg);
-  background: #464646;
+  background: #a7cae1;
   color: white;
+  opacity: 60%;
+  
   /* height: 70vh;
   width: 80vw;
   display: flex;
@@ -875,9 +1018,21 @@
 }
 
 .la {
-    height: 50vh;
-    width: 50vh;
-    margin-top: -60vh;
+  height: 50vh;
+  width: 50vh;
+  margin-top: -60vh;
 }
 
 /*  */
+
+.aboutMainContainer {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.scrollButton {
+  margin: 3vh;
+  height: 2vh;
+  width: 100vh;
+}
