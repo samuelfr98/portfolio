@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import RetroApp from "./Components/RetroApp";
 import ModernApp from "./Components/ModernApp";
+import Amplify from "aws-amplify";
 
 
 function App() {
