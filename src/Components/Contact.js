@@ -10,7 +10,7 @@ const Contact = () => {
     setTimeout(() => {
       setLoading(false);
     }, 1090);
-  }, []);
+  });
 
   return (
     <div className="contact">

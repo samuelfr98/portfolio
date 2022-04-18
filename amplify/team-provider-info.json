@@ -1,15 +1,20 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-portfolio-dev-195914-authRole",
-      "UnauthRoleArn": "arn:aws:iam::701064698086:role/amplify-portfolio-dev-195914-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::701064698086:role/amplify-portfolio-dev-195914-authRole",
+      "AuthRoleName": "amplify-portfolio-dev-141149-authRole",
+      "UnauthRoleArn": "arn:aws:iam::701064698086:role/amplify-portfolio-dev-141149-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::701064698086:role/amplify-portfolio-dev-141149-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-portfolio-dev-195914-deployment",
-      "UnauthRoleName": "amplify-portfolio-dev-195914-unauthRole",
-      "StackName": "amplify-portfolio-dev-195914",
-      "StackId": "arn:aws:cloudformation:us-east-1:701064698086:stack/amplify-portfolio-dev-195914/67369ba0-b53c-11ec-97fe-1286d0c6fb81",
-      "AmplifyAppId": "dm01nb3px5o00"
+      "DeploymentBucketName": "amplify-portfolio-dev-141149-deployment",
+      "UnauthRoleName": "amplify-portfolio-dev-141149-unauthRole",
+      "StackName": "amplify-portfolio-dev-141149",
+      "StackId": "arn:aws:cloudformation:us-east-1:701064698086:stack/amplify-portfolio-dev-141149/3cf926b0-be82-11ec-be20-0e35708e8a2f",
+      "AmplifyAppId": "dgghcs9eikgpg"
+    },
+    "categories": {
+      "auth": {
+        "portfolio617ae867": {}
+      }
     }
   }
 }

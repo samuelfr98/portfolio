@@ -6,7 +6,19 @@
     "gqlSchemaPath": "/Users/samfriedman/Documents/VSCode/MyPortfolio/portfolio/amplify/backend/api/portfolio/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-04-17T19:42:40.932Z",
+      "keyDescription": "api key"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ],
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
     }
   }
 }
