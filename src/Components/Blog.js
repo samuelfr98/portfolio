@@ -69,9 +69,16 @@ const Blog = () => {
       <div onClick={() => createBlog()}>Create blog</div>
       <div onClick={() => readBlogs()}>Read blogs</div>
       <div onClick={() => deleteBlog()}>Delete blog</div>
+      {/* <div className="blog">
+        <BlogCard title="title" author="author" body="body" />
+      </div>
       <div className="blog">
         <BlogCard title="title" author="author" body="body" />
       </div>
+      <div className="blog">
+        <BlogCard title="title" author="author" body="body" />
+      </div> */}
+      {renderBlogs(posts)}
     </div>
   );
 };
