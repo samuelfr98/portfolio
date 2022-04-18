@@ -5,6 +5,7 @@ import NavLoader from "./NavLoader";
 const Contact = () => {
   // For load in effect
   const [isLoading, setLoading] = useState(true);
+  const [side, setSide] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -13,11 +14,19 @@ const Contact = () => {
   });
 
   return (
-    <div className="contact">
+    <div className="contactContainer">
       {isLoading ? <NavLoader page="about" /> : ""}
-      <div className="blog">
+      <div className="contact">
         <ContactCard />
       </div>
+      {!side ? (
+          <div className="postCardButtons">
+            <div className="sendPostCard">Send</div>
+            <div className="cancelPostCard">Cancel</div>
+          </div>
+        ) : (
+          ""
+        )}
     </div>
   );
 };

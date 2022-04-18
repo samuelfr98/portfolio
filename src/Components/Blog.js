@@ -21,8 +21,8 @@ const Blog = () => {
     readBlogs();
     setTimeout(() => {
       setLoading(false);
-    }, 1090);
-  }, [posts]);
+    }, 1090); 
+  }, []);
 
   // Simple Query
   const readBlogs = async () => {
@@ -83,7 +83,7 @@ const Blog = () => {
       {!postForm ? (
         <>
           <div onClick={() => createBlog()}>Create blog</div>
-          <div onClick={() => readBlogs()}>Read blogs</div>
+          <div onClick={() => readBlogs()}>Refresh</div>
           <div onClick={() => deleteBlog()}>Delete blog</div>
         </>
       ) : (

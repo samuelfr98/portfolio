@@ -17,7 +17,7 @@ const AboutMe = (theme) => {
         <p>
           What began as building legos and constructing puzzles quickly evoled
           into a passion for problem solving. Paired with a love of technology,
-          I fell into the world of programming.
+          it was inevitable I would dive into the world of programming.
         </p>
       </div>
       <div>
@@ -32,15 +32,15 @@ const AboutMe = (theme) => {
       <div>
         <p>
           I attended UNC Chapel Hill, where I took an Intro to Programming
-          course. I dove into the world of computer science, and left with a BS
-          in Computer Science and minor in Entrepreneurship.
+          course. I dove into the world of computer science and left with a BS
+          in Computer Science, minor in Entrepreneurship, and a passion for coding.
         </p>
       </div>
       <div>
         <p>
           While at UNC, I held a leadership position with an environmental
           sustainability club. Over three summers, I interned with three
-          startups across diverse industries. I climbed with UNC's rock climbing
+          startups across diverse industries - one of which involved living abroad. I climbed with UNC's rock climbing
           club, and my friends and I won a cash prize at a start up competition.
         </p>
       </div>

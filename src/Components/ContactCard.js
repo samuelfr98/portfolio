@@ -1,14 +1,21 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import postcard from "../Images/postCardFront.png";
 
 const ContactCard = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   // Is front side showing? T/F
   const [side, setSide] = useState(true);
-  const [page, setPage] = useState(0);
 
   const ref = useRef();
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     ref.current.style.transform = `rotateY(${180}deg)`;
+  //     setSide(false);
+  //   }, 4000);
+  // }, []);
 
   useEffect(() => {
     // save ref before cleanup resets to null
@@ -32,7 +39,7 @@ const ContactCard = () => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 100).toFixed(0);
+    const xDegrees = (x / 120).toFixed(0);
     const yDegrees = (y / 70).toFixed(0);
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -41,10 +48,37 @@ const ContactCard = () => {
     ref.current.style.oTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
   };
 
+  const frontside = () => {
+    return (
+      <img src={postcard} position="absolute" height="100%" width="100%" />
+    );
+  };
+
+  const backside = () => {
+    return (
+      <div className="contactBack">
+        <form className="contactForm" action="" method="" encType="">
+          Name:
+          <br />
+          <input type="text" />
+          <br />
+          Email:
+          <br />
+          <input type="text" />
+          <br />
+          Message: <br />
+          <textarea rows="6" cols="20"></textarea>
+          <br />
+          <input type="button" value={"submit"} />
+        </form>
+      </div>
+    );
+  };
+
   return (
-    <div className="undergradCardContainerAbout">
+    <div className="contactCardContainerAbout">
       <div
-        className="undergradCard"
+        className="contactCard"
         ref={ref}
         onMouseMove={
           side
@@ -62,36 +96,23 @@ const ContactCard = () => {
                 return;
               }
         }
+        onClick={
+          side
+            ? () => {
+                ref.current.style.transform = `rotateY(${180}deg)`;
+                setSide(false);
+              }
+            : () => {
+                return;
+              }
+          // () => {
+          //     ref.current.style.transform = `rotateY(${0}deg)`;
+          //     setTimeout(() => setSide(true), 750);
+          //   }
+        }
       >
-          <form className="contactForm" action="" method="" encType="">
-            Name:
-            <br />
-            <input type="text" />
-            <br />
-            Email:
-            <br />
-            <input type="text" />
-            <br />
-            Message: <br />
-            <textarea rows="6" cols="20"></textarea>
-            <br />
-            <input
-            type="button"
-            onClick={
-              side
-                ? () => {
-                    ref.current.style.transform = `rotateY(${180}deg)`;
-                    setSide(false);
-                  }
-                : () => {
-                    ref.current.style.transform = `rotateY(${0}deg)`;
-                    setTimeout(() => setSide(true), 750);
-                  }
-            }
-            value={"submit"}
-          />
-          </form>
-        <div className="undergradBack">{}</div>
+        <div className="contactFront">{frontside()}</div>
+        {backside()}
       </div>
     </div>
   );
