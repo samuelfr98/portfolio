@@ -1,12 +1,14 @@
+import { DataStore } from "@aws-amplify/datastore";
+import { BlogPost } from "../models";
+import React, { useState, useEffect, useRef } from "react";
 import "../ModernApp.css";
-import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 
-const ContactCard = () => {
+const NewBlogPost = (props) => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   // Is front side showing? T/F
   const [side, setSide] = useState(true);
-  const [page, setPage] = useState(0);
+  const [post, setPost] = useState({ title: null, author: null, body: null });
 
   const ref = useRef();
 
@@ -32,7 +34,7 @@ const ContactCard = () => {
   }, [setX, setY]);
 
   const onLogo = () => {
-    const xDegrees = (x / 100).toFixed(0);
+    const xDegrees = (x / 120).toFixed(0);
     const yDegrees = (y / 70).toFixed(0);
     ref.current.style.transform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
     ref.current.style.webkitTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
@@ -41,10 +43,60 @@ const ContactCard = () => {
     ref.current.style.oTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
   };
 
+  const backside = () => {
+    return <div>Backside</div>;
+  };
+
+  const frontside = () => {
+    return (
+      <div className="newBlogPost">
+        <form className="contactForm" action="" method="" encType="">
+          Title:
+          <br />
+          <input type="text" />
+          <br />
+          Author:
+          <br />
+          <input type="text" />
+          <br />
+          Body: <br />
+          <textarea rows="6" cols="20"></textarea>
+          <br />
+          <input
+            type="button"
+            onClick={
+              side
+                ? () => {
+                    ref.current.style.transform = `rotateY(${180}deg)`;
+                    setSide(false);
+                  }
+                : () => {
+                    ref.current.style.transform = `rotateY(${0}deg)`;
+                    setTimeout(() => setSide(true), 750);
+                  }
+            }
+            value={"submit"}
+          />
+        </form>
+      </div>
+    );
+  };
+
+  // Simple Create Mutation
+  const createBlog = async () => {
+    await DataStore.save(
+      new BlogPost({
+        title: "Title of the post",
+        author: "Sam Friedman",
+        body: "Body of the post",
+      })
+    );
+  };
+
   return (
-    <div className="undergradCardContainerAbout">
+    <div className="blogCardContainerAbout">
       <div
-        className="undergradCard"
+        className="blogCard"
         ref={ref}
         onMouseMove={
           side
@@ -63,38 +115,11 @@ const ContactCard = () => {
               }
         }
       >
-          <form className="contactForm" action="" method="" encType="">
-            Name:
-            <br />
-            <input type="text" />
-            <br />
-            Email:
-            <br />
-            <input type="text" />
-            <br />
-            Message: <br />
-            <textarea rows="6" cols="20"></textarea>
-            <br />
-            <input
-            type="button"
-            onClick={
-              side
-                ? () => {
-                    ref.current.style.transform = `rotateY(${180}deg)`;
-                    setSide(false);
-                  }
-                : () => {
-                    ref.current.style.transform = `rotateY(${0}deg)`;
-                    setTimeout(() => setSide(true), 750);
-                  }
-            }
-            value={"submit"}
-          />
-          </form>
-        <div className="undergradBack">{}</div>
+        {frontside()}
+        <div className="blogBack">{backside()}</div>
       </div>
     </div>
   );
 };
 
-export default ContactCard;
+export default NewBlogPost;

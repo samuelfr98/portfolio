@@ -1192,3 +1192,8 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+
+/* BlogPostForm */
+.cancel {
+  margin: 25vh
+}
