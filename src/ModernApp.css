@@ -400,31 +400,83 @@
   }
 }
 
+
+.aboutCard {
+  height: 100%;
+  width: 100%;
+  border-radius: 0px;
+  /* background-image: linear-gradient(to right, #a7cae1, white);  */
+  color: rgb(88, 88, 88);
+  display: flex;
+  justify-content: center;
+  align-items: top;
+
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border: 1px solid lightgray;
+  /* background-color: #a7cae1; */
+}
+
+.aboutCard:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+  transition: 0.6s;
+}
+
+
+.skills {
+  background-image: url('./Images/businessCardBack.png');
+  background-size: 100% 100%;
+}
+
 .aboutContainer {
   height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 8fr 2fr;
+  grid-template-columns: 4fr 6fr;
+  /* background-color: #464646; */
+  background-image: url('./Images/businessCard.png');
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+  /* grid-template-rows: 1fr 8fr 2fr; */
 }
 
 .aboutProfPic {
   display: flex;
   align-items: top;
   justify-content: center;
-  padding-top: 20px;
   height: auto;
   width: auto;
+  /* border: 5px solid black; */
+  align-items: center;
+  justify-content: center;
 }
 
 .aboutBio {
-  display: flex;
+  display: grid;
   align-items: top;
+  justify-content: left;
   text-align: left;
-  padding: 10vh;
-  width: 40vw;
-  padding-left: none;
+  padding: 5vh;
+  border-left: 1.5px solid #a7cae1;
+  height: 20%;
+  width: auto;
+  padding: 20%;
   overflow: visible;
+  color: #a7cae1;
+  font-weight: lighter;
+  font-size: 2em;
+  font-family: helvetica;
+  
+  /* border: 5px solid black; */
 }
+
+.aboutBio > div {
+  font-size: 0.8em;
+}
+
 
 .aboutSkills {
   display: grid;
@@ -1273,6 +1325,8 @@
   overflow: hidden;
   object-fit: cover;
   display: grid;
+  background-image: url('./Images/contactCardBack.png');
+  background-size: 100% 100%;
 }
 
 .postCardButtons {

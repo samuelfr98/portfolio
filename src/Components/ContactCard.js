@@ -57,7 +57,7 @@ const ContactCard = () => {
   const backside = () => {
     return (
       <div className="contactBack">
-        <form className="contactForm" action="" method="" encType="">
+        {/* <form className="contactForm" action="" method="" encType="">
           Name:
           <br />
           <input type="text" />
@@ -70,7 +70,7 @@ const ContactCard = () => {
           <textarea rows="6" cols="20"></textarea>
           <br />
           <input type="button" value={"submit"} />
-        </form>
+        </form> */}
       </div>
     );
   };

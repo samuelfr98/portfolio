@@ -38,6 +38,7 @@ const Blog = () => {
       posts[posts.length - 1]["id"]
     );
     DataStore.delete(modelToDelete);
+    readBlogs();
   };
 
   // Render blogs
@@ -64,6 +65,7 @@ const Blog = () => {
           body: "Body of the post",
         })
       );
+      readBlogs();
     };
 
   return (

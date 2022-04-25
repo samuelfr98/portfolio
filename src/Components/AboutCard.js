@@ -1,16 +1,15 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import HeadStandCard from "./HeadStandCard";
-import prof from "../Images/samProfileImage.png";
+import prof from "../Images/blockLetterInitials.png";
 
-import onecard from "../Images/undergradOneCard.png";
+import back from '../Images/businessCardBack.png';
 
 const AboutCard = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   // Is front side showing? T/F
   const [side, setSide] = useState(true);
-  const [page, setPage] = useState(0);
 
   const ref = useRef();
 
@@ -46,107 +45,23 @@ const AboutCard = () => {
   };
 
   const info = () => {
-    // return major, minor, etc.
-    return page == 0 ? <div>Major, minor, etc.</div> : "";
-    // return
+    return <img src={back} height='100%' width='100%' />;
   };
 
   const frontside = () => {
-    if (page == 0) { return (
+    return (
       <div className="undergradFront">
         <div className="aboutContainer">
-          <div></div>
-          <div></div>
-          <div className="aboutPic">
-            <img src={prof} position="absolute" height="100%" width="200%" />
-          </div>
-          <div className="aboutBio">
-            <p>
-              My name is Sam Friedman, and I grew up in North Carolina. <br />{" "}
-              I'm passionate about problem solving: from coding <br /> to rock
-              climbing routes to even competing in a start up competition.
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-    }
-    else if (page == 1) { return (
-      <div className="undergradFront">
-        <div className="aboutContainer">
-          <div></div>
-          <div></div>
-          <div className="aboutPic">
-            <img src={prof} position="absolute" height="100%" width="200%" />
-          </div>
-          <div className="aboutBio">
-            <p>
-             Page 1
-             </p>
-          </div>
-        </div>
-      </div>
-    )
-    } else if (page == 2) { return (
-      <div className="undergradFront">
-        <div className="aboutContainer">
-          <div></div>
-          <div></div>
-          <div className="aboutPic">
-            <img src={prof} position="absolute" height="100%" width="200%" />
-          </div>
-          <div className="aboutBio">
-            <p>
-              2
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-    } else if (page == 3) { return (
-      <div className="undergradFront">
-        <div className="aboutContainer">
-          <div></div>
-          <div></div>
-          <div className="aboutPic">
-            <img src={prof} position="absolute" height="100%" width="200%" />
-          </div>
-          <div className="aboutBio">
-            <p>
-              3
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-    } else if (page == 4) { return (
-      <div className="undergradFront">
-        <div className="aboutContainer">
-          <div></div>
-          <div></div>
-          <div className="aboutPic">
-            <img src={prof} position="absolute" height="100%" width="200%" />
-          </div>
-          <div className="aboutBio">
-            <p>
-              4 bihhhh
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-    }
-  };
 
-  const scroll = () => {
-    console.log(page)
-    return page < 4 ? setPage(page + 1) : setPage(0);
+        </div>
+      </div>
+    );
   };
 
   return (
     <div className="undergradCardContainerAbout">
       <div
-        className="undergradCard"
+        className="aboutCard"
         ref={ref}
         onMouseMove={
           side
@@ -179,14 +94,8 @@ const AboutCard = () => {
         }
       >
         {frontside()}
-      <div className="undergradBack">{info()}</div>
-
+        <div className="undergradBack">{info()}</div>
       </div>
-      <div className="pageCounter">
-          {page}
-      </div>
-      <div className="scrollButton" onClick={() => scroll()}>Scroll</div>
-
     </div>
   );
 };
