@@ -10,7 +10,7 @@ const BlogCard = (props) => {
   const ref = useRef();
 
   useEffect(() => {
-    // save ref before cleanup resets to null
+    // save ref before cleanup resets to null 
     const instance = ref.current;
 
     const update = (e) => {
@@ -40,16 +40,15 @@ const BlogCard = (props) => {
     ref.current.style.oTransform = `rotateX(${yDegrees}deg) rotateY(${xDegrees}deg)`;
   };
 
-  const backside = () => {
-    return <div>Backside</div>;
-  };
+  // const backside = () => {
+  //   return <div>Backside</div>;
+  // };
 
   const frontside = () => {
     return (
       <div className="blogFront">
         <div>{props.title}</div>
-        <div>{props.body}</div>
-        <div>{props.author}</div>
+        <div>{props.date}</div>
       </div>
     );
   };

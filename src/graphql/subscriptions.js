@@ -1,13 +1,13 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlogPost = /* GraphQL */ `
-  subscription OnCreateBlogPost {
-    onCreateBlogPost {
+export const onCreateContact = /* GraphQL */ `
+  subscription OnCreateContact {
+    onCreateContact {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version
@@ -16,13 +16,13 @@ export const onCreateBlogPost = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateBlogPost = /* GraphQL */ `
-  subscription OnUpdateBlogPost {
-    onUpdateBlogPost {
+export const onUpdateContact = /* GraphQL */ `
+  subscription OnUpdateContact {
+    onUpdateContact {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version
@@ -31,13 +31,13 @@ export const onUpdateBlogPost = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteBlogPost = /* GraphQL */ `
-  subscription OnDeleteBlogPost {
-    onDeleteBlogPost {
+export const onDeleteContact = /* GraphQL */ `
+  subscription OnDeleteContact {
+    onDeleteContact {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version

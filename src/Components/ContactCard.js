@@ -7,15 +7,23 @@ const ContactCard = () => {
   const [y, setY] = useState(0);
   // Is front side showing? T/F
   const [side, setSide] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const ref = useRef();
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     ref.current.style.transform = `rotateY(${180}deg)`;
-  //     setSide(false);
-  //   }, 4000);
-  // }, []);
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleChangeMessage = (event) => {
+    setMessage(event.target.value);
+  };
 
   useEffect(() => {
     // save ref before cleanup resets to null
@@ -56,22 +64,34 @@ const ContactCard = () => {
 
   const backside = () => {
     return (
-      <div className="contactBack">
-        {/* <form className="contactForm" action="" method="" encType="">
-          Name:
-          <br />
-          <input type="text" />
-          <br />
-          Email:
-          <br />
-          <input type="text" />
-          <br />
-          Message: <br />
-          <textarea rows="6" cols="20"></textarea>
-          <br />
-          <input type="button" value={"submit"} />
-        </form> */}
-      </div>
+      <>
+        <div className="contactBack">
+          <form className="contactForm" action="" method="" encType="">
+            <input
+              placeholder="Name"
+              type="text"
+              value={name}
+              className="contactName"
+              onChange={handleChangeName}
+            />
+            <input
+              placeholder="E-mail"
+              type="text"
+              value={email}
+              className="contactEmail"
+              onChange={handleChangeEmail}
+            />
+            <textarea
+              rows="6"
+              cols="400"
+              value={message}
+              className="contactMessage"
+              onChange={handleChangeMessage}
+              placeholder="Message"
+            ></textarea>
+          </form>
+        </div>
+      </>
     );
   };
 
@@ -105,14 +125,30 @@ const ContactCard = () => {
             : () => {
                 return;
               }
-          // () => {
-          //     ref.current.style.transform = `rotateY(${0}deg)`;
-          //     setTimeout(() => setSide(true), 750);
-          //   }
         }
       >
         <div className="contactFront">{frontside()}</div>
         {backside()}
+      </div>
+
+      <div className="sendDiv">
+        <div className="sendEmail"></div>
+        <div
+          className="cancelEmail"
+          onClick={
+            side
+              ? () => {
+                  ref.current.style.transform = `rotateY(${0}deg)`;
+                }
+              : () => {
+                  ref.current.style.transform = `rotateY(${0}deg)`;
+                  setSide(true);
+                  setName("");
+                  setEmail("");
+                  setMessage("");
+                }
+          }
+        ></div>
       </div>
     </div>
   );

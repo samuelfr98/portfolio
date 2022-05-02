@@ -29,7 +29,7 @@ const UndergradCard = () => {
         window.innerHeight ||
         document.documentElement.clientHeight ||
         document.body.clientHeight;
-      console.log("x: " + e.x / width * 100, "y: " + e.y / height * 100);
+      // console.log("x: " + e.x / width * 100, "y: " + e.y / height * 100);
 
       setX(e.x - right + instance.offsetWidth / 2);
       setY(-1 * (e.y - top - instance.offsetHeight / 2));

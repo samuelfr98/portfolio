@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "BlogPost": {
-            "name": "BlogPost",
+        "Contact": {
+            "name": "Contact",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,22 +10,22 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "title": {
-                    "name": "title",
+                "name": {
+                    "name": "name",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "author": {
-                    "name": "author",
+                "email": {
+                    "name": "email",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "body": {
-                    "name": "body",
+                "message": {
+                    "name": "message",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
@@ -49,7 +49,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "BlogPosts",
+            "pluralName": "Contacts",
             "attributes": [
                 {
                     "type": "model",
@@ -76,5 +76,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "a0a27baaea99ccc388126772d539f744"
+    "version": "13c035dad93ebd99524bc04990de686c"
 };

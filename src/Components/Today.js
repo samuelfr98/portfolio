@@ -34,13 +34,13 @@ const Today = () => {
       setFlipped([false, false, false, false]);
 
     } else if (index == "graduation") {
-      setFlipped([val, !val, !val, !val ]);
+      setFlipped([true, false, false, false ]);
     } else if (index == "certifications") {
-      setFlipped([!val, val, !val, !val ]);
+      setFlipped([false, true, false, false ]);
     } else if (index == "designThinking") {
-      setFlipped([!val, !val, val, !val ]);
+      setFlipped([false, false, true, false ]);
     } else if (index == "skills") {
-      setFlipped([!val, !val, !val, val ]);
+      setFlipped([false, false, false, true ]);
     }
 
     console.log(flipped);

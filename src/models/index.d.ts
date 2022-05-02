@@ -4,17 +4,17 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-type BlogPostMetaData = {
+type ContactMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-export declare class BlogPost {
+export declare class Contact {
   readonly id: string;
-  readonly title: string;
-  readonly author?: string | null;
-  readonly body: string;
+  readonly name: string;
+  readonly email?: string | null;
+  readonly message: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<BlogPost, BlogPostMetaData>);
-  static copyOf(source: BlogPost, mutator: (draft: MutableModel<BlogPost, BlogPostMetaData>) => MutableModel<BlogPost, BlogPostMetaData> | void): BlogPost;
+  constructor(init: ModelInit<Contact, ContactMetaData>);
+  static copyOf(source: Contact, mutator: (draft: MutableModel<Contact, ContactMetaData>) => MutableModel<Contact, ContactMetaData> | void): Contact;
 }

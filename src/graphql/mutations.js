@@ -1,16 +1,16 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlogPost = /* GraphQL */ `
-  mutation CreateBlogPost(
-    $input: CreateBlogPostInput!
-    $condition: ModelBlogPostConditionInput
+export const createContact = /* GraphQL */ `
+  mutation CreateContact(
+    $input: CreateContactInput!
+    $condition: ModelContactConditionInput
   ) {
-    createBlogPost(input: $input, condition: $condition) {
+    createContact(input: $input, condition: $condition) {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version
@@ -19,16 +19,16 @@ export const createBlogPost = /* GraphQL */ `
     }
   }
 `;
-export const updateBlogPost = /* GraphQL */ `
-  mutation UpdateBlogPost(
-    $input: UpdateBlogPostInput!
-    $condition: ModelBlogPostConditionInput
+export const updateContact = /* GraphQL */ `
+  mutation UpdateContact(
+    $input: UpdateContactInput!
+    $condition: ModelContactConditionInput
   ) {
-    updateBlogPost(input: $input, condition: $condition) {
+    updateContact(input: $input, condition: $condition) {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version
@@ -37,16 +37,16 @@ export const updateBlogPost = /* GraphQL */ `
     }
   }
 `;
-export const deleteBlogPost = /* GraphQL */ `
-  mutation DeleteBlogPost(
-    $input: DeleteBlogPostInput!
-    $condition: ModelBlogPostConditionInput
+export const deleteContact = /* GraphQL */ `
+  mutation DeleteContact(
+    $input: DeleteContactInput!
+    $condition: ModelContactConditionInput
   ) {
-    deleteBlogPost(input: $input, condition: $condition) {
+    deleteContact(input: $input, condition: $condition) {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version

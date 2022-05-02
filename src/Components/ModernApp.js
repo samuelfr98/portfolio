@@ -15,7 +15,7 @@ import Today from "./Today";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import BioCard from "./BioCard";
-import BlockLetterLogo from "../Images/blockLetterInitialsWithBackground.png";
+import BlockLetterLogo from "../Images/blockLetterInitials.png";
 import { ReactComponent as ScrollingSVG } from "../Images/ScrollingSVG.svg";
 import githubIcon from "../Images/githubIcon.png";
 import emailIcon from "../Images/emailIcon.png";
@@ -181,9 +181,8 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
           <div className="topLeftLogo" onClick={() => changePage("home")}>
             <img
               src={BlockLetterLogo}
-              height="75vh"
+              height="90%"
               overflow="hidden"
-              padding="2px"
             />
             {/* <Logo /> */}
           </div>
@@ -225,6 +224,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
             </div>
           </div>
         </div>
+
         <div className="display">
           {nav.about ? (
             <About />

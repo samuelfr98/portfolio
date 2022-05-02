@@ -1,13 +1,13 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlogPost = /* GraphQL */ `
-  query GetBlogPost($id: ID!) {
-    getBlogPost(id: $id) {
+export const getContact = /* GraphQL */ `
+  query GetContact($id: ID!) {
+    getContact(id: $id) {
       id
-      title
-      author
-      body
+      name
+      email
+      message
       createdAt
       updatedAt
       _version
@@ -16,18 +16,18 @@ export const getBlogPost = /* GraphQL */ `
     }
   }
 `;
-export const listBlogPosts = /* GraphQL */ `
-  query ListBlogPosts(
-    $filter: ModelBlogPostFilterInput
+export const listContacts = /* GraphQL */ `
+  query ListContacts(
+    $filter: ModelContactFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listContacts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
-        author
-        body
+        name
+        email
+        message
         createdAt
         updatedAt
         _version
@@ -39,14 +39,14 @@ export const listBlogPosts = /* GraphQL */ `
     }
   }
 `;
-export const syncBlogPosts = /* GraphQL */ `
-  query SyncBlogPosts(
-    $filter: ModelBlogPostFilterInput
+export const syncContacts = /* GraphQL */ `
+  query SyncContacts(
+    $filter: ModelContactFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncBlogPosts(
+    syncContacts(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -54,9 +54,9 @@ export const syncBlogPosts = /* GraphQL */ `
     ) {
       items {
         id
-        title
-        author
-        body
+        name
+        email
+        message
         createdAt
         updatedAt
         _version
