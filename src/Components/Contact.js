@@ -7,7 +7,7 @@ const Contact = () => {
   const [isLoading, setLoading] = useState(true);
   const [side, setSide] = useState(true)
 
-  useEffect(() => {
+  useEffect(() => { 
     setTimeout(() => {
       setLoading(false);
     }, 1090);

@@ -63,7 +63,7 @@
 .cursor {
   width: 2rem;
   height: 2rem;
-  border: 2px solid #a7cae1;
+  border: 0.2rem solid #a7cae1;
   opacity: 60%;
   background: white;
 
@@ -90,7 +90,7 @@
   background-color: #464646;
   color: white;
   display: grid;
-  grid-template-columns: 5fr 10fr 3fr 4fr 4fr;
+  grid-template-columns: 5fr 10fr 3fr 4fr 1fr;
   align-items: center;
   justify-items: left;
   height: 12vh;
@@ -109,7 +109,7 @@
 }
 
 .topLeftLogo:active {
-  box-shadow: 2px 0px grey;
+  box-shadow: 0.1vh 0px grey;
 }
 
 .navbar {
@@ -139,7 +139,7 @@
 }
 
 .navbar div:active {
-  box-shadow: 2px 0px grey;
+  box-shadow: 0.1vh 0px grey;
 }
 
 @keyframes navHover {
@@ -172,12 +172,12 @@
 .contactIcons {
   display: grid;
   grid-template-columns: 8fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 3vh;
 }
 
 .contactIcons div {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
@@ -208,29 +208,42 @@
   display: grid;
   grid-template-columns: 3fr 3fr;
   height: 88vh;
+  overflow: hidden;
+  padding: none;
 }
 
 .profPic {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   vertical-align: bottom;
-  padding-top: 16vh;
+  height: 100%;
+  width: auto;
   padding-right: 1vw;
   overflow: hidden;
-  perspective: 10vh;
+  perspective: 100px;
   animation: prof 6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+  /* display: flex;
+  justify-content: center;
+  vertical-align: bottom;
+  padding-right: 1vw;
+  overflow: hidden;
+  perspective: 100px;
+  height: 100%;
+  width: auto; */
 }
 
 @keyframes prof {
   0% {
-    padding-top: 100vh;
+    padding-top: 150vh;
   }
   60% {
-    padding-top: 100vh;
+    padding-top: 0vh;
     transform: rotate(45deg);
   }
   100% {
-    padding-top: 16vh;
+    padding-top: 0vh;
   }
 }
 
@@ -240,6 +253,13 @@
   padding-top: 20vh;
   overflow: hidden;
   animation: bio 7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+  /* display: flex;
+  vertical-align: center;
+  padding-top: 20vh;
+  overflow: hidden; */
+
 }
 
 @keyframes bio {
@@ -257,12 +277,18 @@
 
 .profPicStatic {
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  /* align-items: ; */
   vertical-align: bottom;
-  padding-top: 16vh;
+  /* padding-top: 16vh; */
   padding-right: 1vw;
   overflow: hidden;
   perspective: 100px;
+  height: 100%;
+  width: auto;
+  align-self: center;
+  /* changed here */
+  /* position: relative; */
 }
 
 .homeBioStatic {
@@ -273,10 +299,19 @@
 }
 
 /* For Safari */
-/* .cardContainerProf {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-} */
+
+.cardContainerProf {
+  display: flex;
+  justify-content: right;
+  align-items: bottom;
+  position: absolute;
+  bottom: -2vh;
+  right: 5vh;
+}
+
+.card {
+  resize: inline;
+}
 
 @media only screen and (min-height: 850px) {
   .profPic {
@@ -328,8 +363,9 @@
     display: flex;
     justify-content: right;
     vertical-align: bottom;
-    padding-top: 22vh;
+    align-items: bottom;
     padding-right: 1vw;
+    padding-bottom: none;
     overflow: hidden;
     perspective: 100px;
   }
@@ -623,6 +659,14 @@
   align-content: center;
 }
 
+.undergradDetails {
+  display: flex;
+  justify-content: left;
+  text-align: right;
+  align-items: center;
+  padding: 6vh;
+}
+
 .undergradCardContainer {
   background-color: transparent;
   perspective: 1000px;
@@ -642,8 +686,8 @@
 }
 
 .undergradCard {
-  height: 100%;
-  width: 100%;
+  height: 60vh;
+  width: 60vw;
   border-radius: 30px;
   /* background-image: linear-gradient(to right, #a7cae1, white); */
   color: rgb(88, 88, 88);
@@ -697,6 +741,7 @@
   overflow: hidden;
   object-fit: cover;
   position: relative;
+  transform: rotateY(0deg);
 }
 
 /* Style the back side */
@@ -705,6 +750,8 @@
   background: #a7cae1;
   opacity: 60%;
   color: white;
+  height: 60vh;
+  width: 60vw;
   /* height: 70vh;
   width: 80vw;
   display: flex;
@@ -723,13 +770,14 @@
   background-color: #a7cae1;
   box-shadow: 0 0 2px 2px #a7cae1;
   transition: 0.4s;
+  z-index: 10;
 }
 
 .nameSpot {
   position: absolute;
   top: 21vh;
   left: 21vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 4.5vh;
   width: 20.8vw;
 }
@@ -738,7 +786,7 @@
   position: absolute;
   top: 1.8vh;
   left: 1.8vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 16vh;
   width: 40vw;
 }
@@ -747,7 +795,7 @@
   position: absolute;
   top: 20vh;
   left: 2vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 30vh;
   width: 15vw;
 }
@@ -756,7 +804,7 @@
   position: absolute;
   top: 26.5vh;
   left: 23vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 3vh;
   width: 18vw;
 }
@@ -765,7 +813,7 @@
   position: absolute;
   top: 31vh;
   left: 23vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 3.5vh;
   width: 34vw;
 }
@@ -774,7 +822,7 @@
   position: absolute;
   top: 51.4vh;
   left: 2vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 2vh;
   width: 25vw;
 }
@@ -783,7 +831,7 @@
   position: absolute;
   top: 54.2vh;
   left: 2vw;
-  z-index: 10;
+  /* z-index: 10; */
   height: 2vh;
   width: 15vw;
 }
@@ -1050,6 +1098,14 @@
   font-family: Helvetica;
   font-weight: bold;
   position: absolute;
+}
+
+.todayContent {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-align: right;
+  padding: 5vh;
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -1421,6 +1477,15 @@
   width: auto;
 }
 
+input,
+textarea {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 .contactForm {
 }
 
@@ -1574,17 +1639,16 @@
   overflow: hidden;
   object-fit: cover;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 4fr 3fr;
   padding-left: 5vh;
   padding-right: 5vh;
 }
 
 .leftProjCard {
-  border-right: 2px solid #464646;
-  height: 60%;
+  border-right: 2px dashed #464646;
+  height: 100%;
   display: grid;
   /* display: inline-block; */
-
   grid-template-rows: 4fr 3fr;
   text-align: right;
   position: relative;
@@ -1609,12 +1673,12 @@
   position: absolute;
 }
 
-.projectTitle:hover,
+/* .projectTitle:hover,
 .projectTools:hover,
 .projectDesc:hover,
 .projectLink:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-}
+} */
 
 .projectTitle {
   text-align: left;
@@ -1631,7 +1695,7 @@
   top: 0;
   right: 0;
   text-align: right;
-  padding-top : 10vh;
+  padding: 5vh;
 }
 
 .projectDesc {
@@ -1639,6 +1703,7 @@
   font-weight: lighter;
   position: absolute;
   bottom: 0;
+  padding: 5vh;
 }
 
 .projectLink {
@@ -1716,13 +1781,13 @@
 
 .scrolling1 {
   font-weight: lighter;
-  height: 3vh;
+  height: 4vh;
   background-color: #464646;
   margin-top: 5vh;
   margin-bottom: 5vh;
   transition: 0.4s;
   border-radius: 20vh;
-  width: 10vw;
+  width: 12vw;
   transition: 0.6s;
 }
 

@@ -15,9 +15,10 @@ const Today = () => {
   const [isLoading, setLoading] = useState(true);
   const [flipped, setFlipped] = useState([false, false, false, false]);
   const [anyFlipped, setAnyFlipped] = useState(false);
+  const [section, setSection] = useState("")
 
   useEffect(() => {
-    setTimeout(() => {
+    setTimeout(() => { 
       setLoading(false);
     }, 1090);
   }, []);
@@ -33,7 +34,7 @@ const Today = () => {
     if (anyFlipped == false) {
       setFlipped([false, false, false, false]);
 
-    } else if (index == "graduation") {
+    } else if (index == "post-grad") {
       setFlipped([true, false, false, false ]);
     } else if (index == "certifications") {
       setFlipped([false, true, false, false ]);
@@ -46,6 +47,7 @@ const Today = () => {
     console.log(flipped);
 
     setAnyFlipped(!val);
+    setSection(index)
     console.log(anyFlipped)
 
   };
@@ -55,7 +57,7 @@ const Today = () => {
       {isLoading ? <NavLoader page="about" /> : ""}
       <div className="today">
         <div></div>
-        <TodayCard />
+        <TodayCard section={section} num={anyFlipped} />
         <div className="fillOnHoverContainer">
           <div onClick={() => handleFlip("graduation")}>
             <FillOnHover props="graduation" />

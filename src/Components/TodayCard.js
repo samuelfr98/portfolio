@@ -3,7 +3,7 @@ import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 
 import ibmCard from "../Images/ibmCard.png";
 
-const TodayCard = () => {
+const TodayCard = (props) => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   // Is front side showing? T/F
@@ -44,7 +44,66 @@ const TodayCard = () => {
 
   const info = () => {
     // return major, minor, etc.
-    return <div>Certifications, IBM, new tech, moving to LA</div>
+
+
+    if (props.section == "graduation") {
+      return (
+        <div className="todayContent">
+          grad
+          <br />
+          <br />
+          After graduating with distinction from UNC, I moved to Baton Rouge,
+          LA. <br />
+          Rock climbing continues to play a central role in my life, and I am a
+          member at the local climbing gym, Uptown Climbing. <br />
+          I enjoy pursuing personal projects to keep up to date with new
+          releases and tools. <br />
+        </div>
+      );
+    } else if (props.section == "certifications") {
+      return (
+        <div className="todayContent">
+          Certifications
+          <br />
+          <br />
+          In parallel to my project work, I passed the AWS Certified Cloud
+          Practitioner exam.
+          <br />
+          Additionally, I earned my Oracle Java SE 8 certification.
+          <br />
+        </div>
+      );
+    } else if (props.section == "designThinking") {
+      return (
+        <div className="todayContent">
+          Design Thinking <br />
+          <br />
+          I have participated in agile and LEAN workplaces through my internship
+          experience and time with IBM.
+          <br />
+          I am not only passionate about implementing solutions; whereas, I
+          enjoy empathizing with users, uncovering painpoints, ideating and then
+          actualizing a solution. <br />
+        </div>
+      );
+    } else if (props.section == "skills") {
+      return (
+        <div className="todayContent">
+          skills
+          <br />
+          <br />
+          PL-SQL <br />
+          Informatica <br />
+          Python3 <br />
+          Big data manipulation
+          <br />
+          Collaborating with and leading an international team <br />
+          Balancing time as lead developer on one project and data scientist on
+          another
+          <br />
+        </div>
+      );
+    } else return <div>Certifications, IBM, new tech, moving to LA</div>;
   };
 
   return (
@@ -83,13 +142,9 @@ const TodayCard = () => {
         }
       >
         <div className="undergradFront">
-            <img src={ibmCard} 
-            position="absolute"
-            height="100%"
-            width="100%"
-            />
+          <img src={ibmCard} position="absolute" height="100%" width="100%" />
         </div>
-        <div className="undergradBack">{info()}</div>
+        <div className="undergradBack">{<div>{info()}</div>}</div>
       </div>
     </div>
   );

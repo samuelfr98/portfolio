@@ -183,7 +183,7 @@
   display: flex;
 }
 
-.belowSideBar {
+.belowSideBar { 
   width: 10vw;
   margin: 0.5vh;
   margin-bottom: 0px;
@@ -416,7 +416,7 @@
   justify-items: center;
   align-items: center;
   overflow: hidden;
-  animation: 1.5s linear 5s loadContainer;
+  animation: 1.5s linear 3s loadContainer;
   background-color: #bfbfbf;
 }
 
@@ -434,7 +434,7 @@
 .loader {
   background-color: #020180;
   animation-name: loadingR;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
   justify-content: left;
   height: calc(2vh - 1px)

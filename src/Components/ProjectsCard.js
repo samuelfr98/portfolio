@@ -8,17 +8,30 @@ const ProjectCard = (props) => {
 
   const preview = () => {
     return (
-      <div className="projectPreview">
+      <div
+        className="projectPreview"
+        onClick={() =>
+          window
+            .open(
+              props.link,
+              "_blank"
+            )
+            .focus()
+        }
+      >
         <div className="leftProjCard">
-          <div className="projectTitle"><h4>{props.title}</h4></div>
+          <div className="projectTitle">
+            <h4>{props.title}</h4>
+          </div>
           <div className="projectDesc">{props.desc}</div>
         </div>
         <div className="rightProjCard">
           <div className="projectTools">
-
-            {tools.map((t) => <div>{t}</div>)}
+            {tools.map((t) => (
+              <div>{t}</div>
+            ))}
           </div>
-          <div className="projectLink">{props.link}</div>
+          {/* <div className="projectLink">{props.link}</div> */}
         </div>
       </div>
     );

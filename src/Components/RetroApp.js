@@ -8,8 +8,15 @@ import githubLogo from "../Images/githubLogo.jpeg";
 import linkedInLogo from "../Images/linkedInLogo.png";
 
 import { useEffect, useState } from "react";
-
+ 
 const RetroApp = ({ upgradeTheme, theme }) => {
+  // About page with bio from linkedIn
+  // Undergrad summary with UNC logo
+  // Today page with IBM info and certifications
+  // Projects page
+  // Contact page
+  // Blog
+  // Home
   const [state, setState] = useState({
     aboutme: false,
     resume: false,
@@ -25,8 +32,8 @@ const RetroApp = ({ upgradeTheme, theme }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
-    }, 6490);
+      setLoading(false); 
+    }, 4490);
   }, []);
 
   const redirect = (url) => {
