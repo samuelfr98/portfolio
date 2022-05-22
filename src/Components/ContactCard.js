@@ -134,39 +134,46 @@ const ContactCard = () => {
       <div className="sendDiv">
         <div
           className="sendEmail"
-          onClick={() => {
-            // event.preventDefault();
-            const endpoint =
-              "https://i7ubiu1b2a.execute-api.us-east-1.amazonaws.com/default/SendContactEmail";
+          onClick={
+            side
+              ? () => {
+                  ref.current.style.transform = `rotateY(${0}deg)`;
+                }
+              : () => {
+                  // event.preventDefault();
+                  const endpoint =
+                    "https://i7ubiu1b2a.execute-api.us-east-1.amazonaws.com/default/SendContactEmail";
 
-            const body = JSON.stringify({
-              senderName: name,
-              senderEmail: email,
-              message: message,
-            });
-            console.log(body)
-            const requestOptions = {
-              method: "POST",
-              body,
-            };
-            fetch(endpoint, requestOptions)
-              .then((response) => {
-                if (!response.ok) throw new Error("Error in fetch");
-                console.log(response.json());
-              })
-              .then((response) => {
-                console.log("Email sent successfully!");
-                alert("Thank you for reaching out! Your e-mail sent successfully")
-              })
-              .catch((error) => {
-                console.log("An unkown error occured.");
-                alert("An error occured")
-              });
-            ref.current.style.transform = `rotateY(${0}deg)`;
-            setSide(true);
-          }}
+                  const body = JSON.stringify({
+                    senderName: name,
+                    senderEmail: email,
+                    message: message,
+                  });
+                  console.log(body);
+                  const requestOptions = {
+                    method: "POST",
+                    body,
+                  };
+                  fetch(endpoint, requestOptions)
+                    .then((response) => {
+                      if (!response.ok) throw new Error("Error in fetch");
+                      console.log(response.json());
+                    })
+                    .then((response) => {
+                      console.log("Email sent successfully!");
+                      alert(
+                        "Thank you for reaching out! Your e-mail sent successfully"
+                      );
+                    })
+                    .catch((error) => {
+                      console.log("An unkown error occured.");
+                      alert("An error occured");
+                    });
+                  ref.current.style.transform = `rotateY(${0}deg)`;
+                  setSide(true);
+                }
+          }
         ></div>
-
         <div
           className="cancelEmail"
           onClick={
@@ -180,7 +187,7 @@ const ContactCard = () => {
                   setName("");
                   setEmail("");
                   setMessage("");
-                  alert("E-mail cancelled")
+                  alert("E-mail cancelled");
                 }
           }
         ></div>

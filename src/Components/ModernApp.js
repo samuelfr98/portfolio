@@ -99,16 +99,16 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
         blog: false,
         home: false,
       });
-    else if (navClicked === "blog")
-      setNav({
-        about: false,
-        undergrad: false,
-        today: false,
-        projects: false,
-        contact: false,
-        blog: true,
-        home: false,
-      });
+    // else if (navClicked === "blog")
+    //   setNav({
+    //     about: false,
+    //     undergrad: false,
+    //     today: false,
+    //     projects: false,
+    //     contact: false,
+    //     blog: true,
+    //     home: false,
+    //   });
     else if (navClicked === "home")
       setNav({
         about: false,
@@ -192,7 +192,7 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
             <div onClick={() => changePage("today")}>today</div>
             <div onClick={() => changePage("projects")}>projects</div>
             <div onClick={() => changePage("contact")}>contact</div>
-            <div onClick={() => changePage("blog")}>blog</div>
+            {/* <div onClick={() => changePage("blog")}>blog</div> */}
             <div onClick={() => downgradeTheme("retro")}>retro</div>
           </div>
           <div></div>

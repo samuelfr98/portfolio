@@ -167,7 +167,7 @@
 .sideAndBoard {
   display: flex;
   height: 80vh;
-}
+} 
 
 .aboutMe {
   font-family: "Courier New", Courier, monospace;
@@ -488,3 +488,19 @@
     width: 100%;
   }
 } */
+
+
+.contactMe {
+  height: 100%;
+  width: 100%;
+
+}
+
+.sendDiv {
+  display: flex;
+  border: solid 2px black;
+}
+
+.retroCancelEmail, .retroSendEmail {
+  border: solid 2px black;
+}

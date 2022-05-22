@@ -2,25 +2,31 @@ import "../RetroApp.css";
 import TitleBar from "./TitleBar";
 import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
-import Resume from "./Resume";
+import Resume from "./UndergradRetro";
 import UpgradeBox from "./UpgradeBox";
 import githubLogo from "../Images/githubLogo.jpeg";
 import linkedInLogo from "../Images/linkedInLogo.png";
+import TodayRetro from "./TodayRetro";
+import UndergradRetro from "./UndergradRetro";
+import ProjectsRetro from "./ProjectsRetro";
 
 import { useEffect, useState } from "react";
- 
+
 const RetroApp = ({ upgradeTheme, theme }) => {
-  // About page with bio from linkedIn
-  // Undergrad summary with UNC logo
-  // Today page with IBM info and certifications
-  // Projects page
-  // Contact page
-  // Blog
-  // Home
+  // About page with bio from linkedIn                --- Check
+  // Undergrad summary with UNC logo                  ---
+  // Today page with IBM info and certifications      ---
+  // Projects page                                    ---
+  // Contact page                                     ---
+  // Blog                                             ---
+  // Home                                             ---
   const [state, setState] = useState({
     aboutme: false,
-    resume: false,
-    contactme: false, 
+    undergrad: false,
+    today: false,
+    projects: false,
+    contactme: false,
+    //    blog: false,
     github: false,
     linkedin: false,
     home: false,
@@ -32,7 +38,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false); 
+      setLoading(false);
     }, 4490);
   }, []);
 
@@ -40,16 +46,20 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     if (url === "About Me")
       setState({
         aboutme: true,
-        resume: false,
+        undergrad: false,
+        today: false,
+        projects: false,
         contactme: false,
         github: false,
         linkedin: false,
         home: false,
       });
-    else if (url === "Resume")
+    else if (url === "Undergrad")
       setState({
         aboutme: false,
-        resume: true,
+        undergrad: true,
+        today: false,
+        projects: false,
         contactme: false,
         github: false,
         linkedin: false,
@@ -58,7 +68,9 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     else if (url === "Contact Me")
       setState({
         aboutme: false,
-        resume: false,
+        undergrad: false,
+        today: false,
+        projects: false,
         contactme: true,
         github: false,
         linkedin: false,
@@ -67,7 +79,9 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     else if (url === "https://github.com/samuelfr98") {
       setState({
         aboutme: false,
-        resume: false,
+        undergrad: false,
+        today: false,
+        projects: false,
         contactme: false,
         github: true,
         linkedin: false,
@@ -77,7 +91,9 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     } else if (url === "https://www.linkedin.com/in/sam-friedman-b8852118a") {
       setState({
         aboutme: false,
-        resume: false,
+        undergrad: false,
+        today: false,
+        projects: false,
         contactme: false,
         github: false,
         linkedin: true,
@@ -87,19 +103,46 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     } else if (url === "Home") {
       setState({
         aboutme: false,
-        resume: false,
+        undergrad: false,
+        today: false,
+        projects: false,
         contactme: false,
         github: false,
         linkedin: false,
         home: true,
       });
+    } else if (url === "Today") {
+      setState({
+        aboutme: false,
+        undergrad: false,
+        today: true,
+        projects: false,
+        contactme: false,
+        github: false,
+        linkedin: false,
+        home: false,
+      })
+    } else if (url === "Projects") {
+      setState({
+        aboutme: false,
+        undergrad: false,
+        today: false,
+        projects: true,
+        contactme: false,
+        github: false,
+        linkedin: false,
+        home: false,
+      });;
     }
     console.log(state);
   };
 
   const showPage = (state) => {
     if (state.aboutme) return <AboutMe />;
-    else if (state.resume) return <Resume />;
+    else if (state.undergrad) return <UndergradRetro />;
+    else if (state.contactme) return <ContactMe />;
+    else if (state.today) return <TodayRetro />;
+    else if (state.projects) return <ProjectsRetro />;
     else if (state.contactme) return <ContactMe />;
     else if (state.github)
       return (
@@ -139,6 +182,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
       ) : (
         ""
       )}
+      
       <div>
         <TitleBar />
         <div className="fileBar">
@@ -161,7 +205,16 @@ const RetroApp = ({ upgradeTheme, theme }) => {
             <button onClick={() => redirect("About Me")}>About Me</button>
           </div>
           <div className="sideButton">
-            <button onClick={() => redirect("Resume")}>Resume</button>
+            <button onClick={() => redirect("Undergrad")}>Undergrad</button>
+          </div>
+          <div className="sideButton">
+            <button onClick={() => redirect("Today")}>Today</button>
+          </div>
+          <div className="sideButton">
+            <button onClick={() => redirect("Projects")}>Projects</button>
+          </div>
+          <div className="sideButton">
+            <button onClick={() => redirect("Contact Me")}>Contact Me</button>
           </div>
           <div className="sideButton">
             <button onClick={() => redirect("https://github.com/samuelfr98")}>
@@ -176,9 +229,6 @@ const RetroApp = ({ upgradeTheme, theme }) => {
             >
               LinkedIn
             </button>
-          </div>
-          <div className="sideButton">
-            <button onClick={() => redirect("Contact Me")}>Contact Me</button>
           </div>
           <div className="sideButton">
             <button onClick={() => redirect("Home")}>Home</button>
