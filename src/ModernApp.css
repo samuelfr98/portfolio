@@ -223,7 +223,6 @@
   perspective: 100px;
   animation: prof 6s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-
   /* display: flex;
   justify-content: center;
   vertical-align: bottom;
@@ -254,12 +253,10 @@
   overflow: hidden;
   animation: bio 7s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-
   /* display: flex;
   vertical-align: center;
   padding-top: 20vh;
   overflow: hidden; */
-
 }
 
 @keyframes bio {
@@ -318,7 +315,7 @@
     display: flex;
     justify-content: right;
     vertical-align: bottom;
-    padding-top: 22vh;
+    padding-top: 20vh;
     padding-right: 1vw;
     overflow: hidden;
     perspective: 10vh;
@@ -334,7 +331,7 @@
       transform: rotate(45deg);
     }
     100% {
-      padding-top: 22vh;
+      padding-top: 20vh;
     }
   }
 
@@ -373,9 +370,17 @@
   .homeBioStatic {
     display: flex;
     vertical-align: center;
-    padding-top: 26vh;
+    padding-top: 20vh;
     overflow: hidden;
   }
+}
+
+.samProfileImage {
+  height: 60vh;
+}
+
+.bioCard {
+  height: 32vh;
 }
 
 @media only screen and (min-height: 960px) {
@@ -383,11 +388,12 @@
     display: flex;
     justify-content: right;
     vertical-align: bottom;
-    padding-top: 28vh;
+    padding-top: 13vh;  /* (26 / 2) */
     padding-right: 1vw;
     overflow: hidden;
-    perspective: 10vh;
+    perspective: 100px;
     animation: prof 6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
   }
 
   @keyframes prof {
@@ -399,14 +405,32 @@
       transform: rotate(45deg);
     }
     100% {
-      padding-top: 28vh;
+      padding-top: 13vh;
     }
+  }
+
+  .samProfileImage {
+    height: 55vh;
+  }
+
+  .bioCard {
+    height: 30vh;
+    padding-top: -5vh;
+  }
+
+  .cardContainerProf {
+    display: flex;
+    justify-content: right;
+    align-items: bottom;
+    position: absolute;
+    bottom: 12vh;
+    /* right: 5vh; */
   }
 
   .homeBio {
     display: flex;
     vertical-align: center;
-    padding-top: 28vh;
+    padding-top: 20vh;
     overflow: hidden;
     animation: bio 7s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -420,7 +444,7 @@
       transform: rotate(45deg);
     }
     100% {
-      padding-top: 28vh;
+      padding-top: 20vh;
     }
   }
 
@@ -428,7 +452,7 @@
     display: flex;
     justify-content: right;
     vertical-align: bottom;
-    padding-top: 28vh;
+    padding-top: 26vh;
     padding-right: 1vw;
     overflow: hidden;
     perspective: 100px;
@@ -437,7 +461,7 @@
   .homeBioStatic {
     display: flex;
     vertical-align: center;
-    padding-top: 28vh;
+    padding-top: 20vh;
     overflow: hidden;
   }
 }

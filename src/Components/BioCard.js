@@ -52,9 +52,9 @@ const BioCard = () => {
       >
         <div>
           {/* <h1>Sam Friedman</h1> */}
-          <img
+          <img className="bioCard"
               src={homeBio}
-              height="250vh"
+              // height="250vh"
             />
         </div>
       </div>

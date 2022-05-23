@@ -15,7 +15,7 @@ const Today = () => {
   const [isLoading, setLoading] = useState(true);
   const [flipped, setFlipped] = useState([false, false, false, false]);
   const [anyFlipped, setAnyFlipped] = useState(false);
-  const [section, setSection] = useState("")
+  const [section, setSection] = useState("");
 
   useEffect(() => {
     setTimeout(() => { 
@@ -46,7 +46,7 @@ const Today = () => {
 
     console.log(flipped);
 
-    setAnyFlipped(!val);
+    setAnyFlipped(true);
     setSection(index)
     console.log(anyFlipped)
 

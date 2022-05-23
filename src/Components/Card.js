@@ -100,12 +100,13 @@ const Card = () => {
           {/* <h1>Sam Friedman</h1> */}
           <img
             src={samProfileImageBordered}
-            height="500vh"
+            // height="500vh"
             width="auto"
             max-width="100%"
             object-fit="cover"
             overflow="hidden"
             resize="both"
+            className="samProfileImage"
             // position="absolute"
             // bottom="0"
             // right="0"

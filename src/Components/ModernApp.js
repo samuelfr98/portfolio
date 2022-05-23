@@ -1,6 +1,6 @@
 import "../ModernApp.css";
 import personalLogo from "../Images/personalLogo.jpeg";
-import bluePaper from "../Images/bluePaper.jpeg";
+import bluePaper from "../Images/bluePaper.jpeg"; 
 import React, { useEffect, useRef, useState } from "react";
 import FiberScene from "./FiberScene";
 import Logo from "./Logo";

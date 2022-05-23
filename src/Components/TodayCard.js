@@ -32,6 +32,13 @@ const TodayCard = (props) => {
     };
   }, [setX, setY]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current.style.transform = `rotateY(${180}deg)`;
+      setSide(false)}, 4000)
+  }, [])
+
+
   const onLogo = () => {
     const xDegrees = (x / 40).toFixed(0);
     const yDegrees = (y / 60).toFixed(0);
@@ -49,13 +56,14 @@ const TodayCard = (props) => {
     if (props.section == "graduation") {
       return (
         <div className="todayContent">
-          grad
+          graduation
           <br />
+          <br/>
           <br />
           After graduating with distinction from UNC, I moved to Baton Rouge,
-          LA. <br />
-          Rock climbing continues to play a central role in my life, and I am a
-          member at the local climbing gym, Uptown Climbing. <br />
+          LA. <br /><br/>
+          Despite some distance to the mountains now, rock climbing continues to play a central role in my life, and I am a
+          member at the local climbing gym, Uptown Climbing. <br /><br/>
           I enjoy pursuing personal projects to keep up to date with new
           releases and tools. <br />
         </div>
@@ -65,11 +73,10 @@ const TodayCard = (props) => {
         <div className="todayContent">
           Certifications
           <br />
+          <br/>
           <br />
-          In parallel to my project work, I passed the AWS Certified Cloud
-          Practitioner exam.
-          <br />
-          Additionally, I earned my Oracle Java SE 8 certification.
+          In parallel to project work, I passed the AWS Certified Cloud
+          Practitioner exam and earned my Oracle Java SE 8 certification.
           <br />
         </div>
       );
@@ -78,8 +85,10 @@ const TodayCard = (props) => {
         <div className="todayContent">
           Design Thinking <br />
           <br />
+          <br />
           I have participated in agile and LEAN workplaces through my internship
           experience and time with IBM.
+          <br />
           <br />
           I am not only passionate about implementing solutions; whereas, I
           enjoy empathizing with users, uncovering painpoints, ideating and then
@@ -92,18 +101,19 @@ const TodayCard = (props) => {
           skills
           <br />
           <br />
-          PL-SQL <br />
-          Informatica <br />
-          Python3 <br />
-          Big data manipulation
           <br />
-          Collaborating with and leading an international team <br />
+          PL-SQL <br /><br />
+          Informatica <br /><br />
+          Python3 <br /><br />
+          Big data manipulation
+          <br /><br />
+          Collaborating with and leading an international team <br /><br />
           Balancing time as lead developer on one project and data scientist on
           another
           <br />
         </div>
       );
-    } else return <div>Certifications, IBM, new tech, moving to LA</div>;
+    } else return <div className="todayContent">Click on a topic from the right hand side to display more info here!</div>;
   };
 
   return (
