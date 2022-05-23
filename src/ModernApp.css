@@ -310,7 +310,7 @@
   resize: inline;
 }
 
-@media only screen and (min-height: 850px) {
+/* @media only screen and (min-height: 850px) {
   .profPic {
     display: flex;
     justify-content: right;
@@ -373,7 +373,7 @@
     padding-top: 20vh;
     overflow: hidden;
   }
-}
+} */
 
 .samProfileImage {
   height: 60vh;
@@ -383,7 +383,7 @@
   height: 32vh;
 }
 
-@media only screen and (min-height: 960px) {
+@media only screen and (min-height: 50px) {
   .profPic {
     display: flex;
     justify-content: right;
