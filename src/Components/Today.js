@@ -27,9 +27,9 @@ const Today = () => {
     // flipped lags behind anyFlipped boolean state
     
     const now = flipped
-    console.log(flipped)
+    // console.log(flipped)
     const val = anyFlipped;
-    console.log(val)
+    // console.log(val)
 
     if (anyFlipped == false) {
       setFlipped([false, false, false, false]);
@@ -44,11 +44,11 @@ const Today = () => {
       setFlipped([false, false, false, true ]);
     }
 
-    console.log(flipped);
+    // console.log(flipped);
 
     setAnyFlipped(true);
     setSection(index)
-    console.log(anyFlipped)
+    // console.log(anyFlipped)
 
   };
 

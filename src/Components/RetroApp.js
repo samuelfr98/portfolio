@@ -4,7 +4,7 @@ import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
 import Resume from "./UndergradRetro";
 import UpgradeBox from "./UpgradeBox";
-import githubLogo from "../Images/githubLogo.jpeg";
+import githubLogo from "../Images/githubLogo.png";
 import linkedInLogo from "../Images/linkedInLogo.png";
 import TodayRetro from "./TodayRetro";
 import UndergradRetro from "./UndergradRetro";
@@ -121,7 +121,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         github: false,
         linkedin: false,
         home: false,
-      })
+      });
     } else if (url === "Projects") {
       setState({
         aboutme: false,
@@ -132,9 +132,9 @@ const RetroApp = ({ upgradeTheme, theme }) => {
         github: false,
         linkedin: false,
         home: false,
-      });;
+      });
     }
-    console.log(state);
+    // console.log(state);
   };
 
   const showPage = (state) => {
@@ -182,7 +182,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
       ) : (
         ""
       )}
-      
+
       <div>
         <TitleBar />
         <div className="fileBar">
