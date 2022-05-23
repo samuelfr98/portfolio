@@ -238,7 +238,6 @@ const UndergradCard = () => {
     } else {
       return "GDTBATH";
     }
-    return <div>Major, minor, etc.</div>;
   };
 
   return (

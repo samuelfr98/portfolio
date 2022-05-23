@@ -23,7 +23,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
   const [state, setState] = useState({
     aboutme: false,
     undergrad: false,
-    today: false,
+    // today: false,
     projects: false,
     contactme: false,
     //    blog: false,
@@ -141,7 +141,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
     if (state.aboutme) return <AboutMe />;
     else if (state.undergrad) return <UndergradRetro />;
     else if (state.contactme) return <ContactMe />;
-    else if (state.today) return <TodayRetro />;
+    // else if (state.today) return <TodayRetro />;
     else if (state.projects) return <ProjectsRetro />;
     else if (state.contactme) return <ContactMe />;
     else if (state.github)
@@ -207,9 +207,9 @@ const RetroApp = ({ upgradeTheme, theme }) => {
           <div className="sideButton">
             <button onClick={() => redirect("Undergrad")}>Undergrad</button>
           </div>
-          <div className="sideButton">
+          {/* <div className="sideButton">
             <button onClick={() => redirect("Today")}>Today</button>
-          </div>
+          </div> */}
           <div className="sideButton">
             <button onClick={() => redirect("Projects")}>Projects</button>
           </div>

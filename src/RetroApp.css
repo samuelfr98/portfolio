@@ -7,8 +7,6 @@
   overflow: hidden;
 }
 
-
-
 .sideBar {
   display: block;
   margin: 0.5vh;
@@ -167,7 +165,7 @@
 .sideAndBoard {
   display: flex;
   height: 80vh;
-} 
+}
 
 .aboutMe {
   font-family: "Courier New", Courier, monospace;
@@ -183,7 +181,7 @@
   display: flex;
 }
 
-.belowSideBar { 
+.belowSideBar {
   width: 10vw;
   margin: 0.5vh;
   margin-bottom: 0px;
@@ -437,7 +435,7 @@
   animation-duration: 3s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
   justify-content: left;
-  height: calc(2vh - 1px)
+  height: calc(2vh - 1px);
 }
 
 /* Have loading bar grow into blue bar at top of screen */
@@ -489,18 +487,72 @@
   }
 } */
 
+.center {
+  text-align: left;
+  padding-left: 2vh;
+}
 
 .contactMe {
-  height: 100%;
-  width: 100%;
-
-}
-
-.sendDiv {
+  height: 80%;
+  width: 90%;
+  margin: 5vh;
   display: flex;
-  border: solid 2px black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.retroCancelEmail, .retroSendEmail {
-  border: solid 2px black;
+.sendDivRetro {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 20vh;
+  height: 10vh;
+}
+
+.retroCancelEmail,
+.retroSendEmail {
+  margin: 2vh;
+  padding: 2vh;
+}
+.retroCancelEmail:hover,
+.retroSendEmail:hover {
+  border: 2px solid black;
+}
+
+.retroName,
+.retroEmail,
+.retroMessage {
+  width: 80%;
+  margin: 1vh;
+  height: 2em;
+}
+
+.retroMessage {
+  height: 12em;
+}
+
+.resume {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2vh;
+}
+
+.rightRetroUndergrad {
+  text-align: right;
+  width: 60%;
+}
+
+.leftRetroUndergrad {
+  text-align: left;
+  width: 40%;
+}
+
+.projectsRetro {
+}
+
+.retroProjLink:hover {
+  border: 2px solid black;
+  cursor: pointer;
 }
