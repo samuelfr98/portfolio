@@ -48,6 +48,8 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
     }, 7000);
   }, []);
 
+
+
   const changePage = (navClicked) => {
     if (navClicked === "about")
       setNav({

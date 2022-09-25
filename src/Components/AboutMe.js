@@ -15,8 +15,7 @@ const AboutMe = (theme) => {
         ReactJS, CSS and HTML for frontend development. <br/><br/>For backend development,
         maintenance, continuous deployment and continuous integration, I often
         turn to AWS Amplify and GitHub. <br/><br/>When analyzing data, I frequently
-        leverage PL-SQL as well as Python3 libraries like scikit-learn, pandas
-        and matplotlib. <br/><br/>I developed this site with a combination of
+        leverage PL-SQL as well as Python. <br/><br/>I developed this site with a combination of
         the full stack tools mentioned above.
       </div>
     </div>

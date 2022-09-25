@@ -165,7 +165,7 @@ const RetroApp = ({ upgradeTheme, theme }) => {
             Sam was born in 1998, and this website looks like it hasn't been
             updated since then. <br /> <br />
             Explore the retro theme, and check out the bottom right corner if
-            you think the site could use a upgrade!
+            you think the site could use an upgrade!
           </p>
         </div>
       );

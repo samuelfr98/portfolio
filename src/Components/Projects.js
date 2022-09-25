@@ -56,13 +56,13 @@ const Projects = () => {
     },
     {
       title: "SMTP Client and Server",
-      desc: "For Comp 435 (Networking), built a client and server to send emails. From parsing the client's input to routing messages via web sockets on the server side to allowing all functionality of a typical email UI, the programmed allowed users to send and receive emails.",
+      desc: "For Comp 435 (Networking), built a client and server to send emails. From parsing the client's input to routing messages via web sockets on the server side to allowing all functionality of a typical email UI, the program allows users to send and receive emails.",
       tools: ["Python", "Sockets", "VIM", "Network Protocols"],
       link: "",
     },
     {
       title: "Makeathon",
-      desc: "Won cash investment prize in 2019 UNC Start Up competition, the Makeathon. In one week, our team of five identified a problem, interviewed experts while brainstorming solution, built a minimally viable product and pitched to investors on competition day - all while simultaneously full time students. ",
+      desc: "Won cash prize investment in 2019 UNC Start Up competition, the Makeathon. In one week, our team of five identified a problem, interviewed experts while brainstorming solution, built a minimally viable product and pitched to investors on competition day - all while simultaneously full time students. ",
       tools: ["Teamwork", "LEAN", "Pitching", "Design Thinking Process"],
       link: "",
     },

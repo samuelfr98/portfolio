@@ -86,6 +86,14 @@
   grid-template-rows: 1fr 7fr;
 }
 
+/* Mobile CSS */
+@media (max-width: 480px) {
+  .profPicStatic {
+    width: 50vh;
+  }
+
+}
+
 .topBar {
   background-color: #464646;
   color: white;
@@ -388,12 +396,11 @@
     display: flex;
     justify-content: right;
     vertical-align: bottom;
-    padding-top: 13vh;  /* (26 / 2) */
+    padding-top: 13vh; /* (26 / 2) */
     padding-right: 1vw;
     overflow: hidden;
     perspective: 100px;
     animation: prof 6s cubic-bezier(0.075, 0.82, 0.165, 1);
-
   }
 
   @keyframes prof {
