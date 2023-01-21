@@ -1,6 +1,6 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
-import homeBio from "../Images/homeBio.png";
+import homeBio from "../Images/homeBioJson.png";
 
 
 const BioCard = () => {
