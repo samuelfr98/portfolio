@@ -13,6 +13,8 @@ function App() {
     setTheme(theme);
   }, [theme]);
 
+
+
   return theme === "retro" ? (
     <RetroApp upgradeTheme={setTheme} theme={theme} />
   ) : (

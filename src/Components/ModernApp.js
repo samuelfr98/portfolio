@@ -6,7 +6,7 @@ import FiberScene from "./FiberScene";
 import Logo from "./Logo";
 import Card from "./Card";
 import samProfileImageBordered from "../Images/samProfileImageBordered.jpg";
-import homeBio from "../Images/homeBio.png";
+// import homeBio from "../Images/homeBioJson.png";
 import mountainLineArt from "../Images/mountainLineArt.png";
 import ModernAppLoader from "./ModernAppLoader";
 import About from "./About";
