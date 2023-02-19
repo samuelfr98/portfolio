@@ -1751,8 +1751,11 @@ textarea {
 /* Mobile CSS */
 
 @media screen and (max-height: 850px) and (max-width: 400px) {
+  
   .global {
-    overflow: scroll;
+    overflow: hidden;
+    background-color: #464646;
+    
   }
 
   .topBar {

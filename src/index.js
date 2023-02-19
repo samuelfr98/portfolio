@@ -14,7 +14,8 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
   {/* Added below line to force responsive web design on mobile devices. Not working, should be added to index.html equivalent file */}
-     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui"/>
+     {/* <meta name="viewport" content="width=device-width, minimal-ui"></meta> */}
 
     <App />
   </React.StrictMode>,
