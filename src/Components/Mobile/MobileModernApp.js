@@ -10,6 +10,11 @@ import Contact from "../Contact";
 import BioCard from "../BioCard";
 import MyCursor from "../CustomCursor/MyCursor";
 import Blog from "../Blog";
+import BlockLetterLogo from "../../Images/blockLetterInitials.png";
+import { ReactComponent as ScrollingSVG } from "../../Images/ScrollingSVG.svg";
+import githubIcon from "../../Images/githubIcon.png";
+import emailIcon from "../../Images/emailIcon.png";
+import linkedInIcon from "../../Images/linkedInIcon.png";
 
 const MobileModernApp = ({ downgradeTheme }, { children }) => {
   const [isLoading, setLoading] = useState(true);
@@ -34,8 +39,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       setPicSlide(false);
     }, 7000);
   }, []);
-
-
 
   const changePage = (navClicked) => {
     if (navClicked === "about")
@@ -156,7 +159,49 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       <MyCursor />
       {isLoading ? <ModernAppLoader /> : ""}
       <div className="modernContainer">
-
+        <div className="topBar">
+          <div className="topLeftLogo" onClick={() => changePage("home")}>
+            <img src={BlockLetterLogo} height="90%" overflow="hidden" />
+            {/* <Logo /> */}
+          </div>
+          <div className="navbar">
+            <div onClick={() => changePage("about")}>about</div>
+            <div onClick={() => changePage("undergrad")}>undergrad</div>
+            <div onClick={() => changePage("today")}>today</div>
+            <div onClick={() => changePage("projects")}>projects</div>
+            <div onClick={() => changePage("contact")}>contact</div>
+            {/* <div onClick={() => changePage("blog")}>blog</div> */}
+            <div onClick={() => downgradeTheme("retro")}>retro</div>
+          </div>
+          <div></div>
+          <div className="contactIcons">
+            <div></div>
+            <div
+              className="linkedInIcon"
+              onClick={() =>
+                window
+                  .open(
+                    "https://www.linkedin.com/in/sam-friedman-b8852118a",
+                    "_blank"
+                  )
+                  .focus()
+              }
+            >
+              <img src={linkedInIcon} />
+            </div>
+            <div
+              className="githubIcon"
+              onClick={() =>
+                window.open("https://github.com/samuelfr98", "_blank").focus()
+              }
+            >
+              <img src={githubIcon} />
+            </div>
+            <div className="emailIcon" onClick={() => changePage("contact")}>
+              <img src={emailIcon} />
+            </div>
+          </div>
+        </div>
 
         <div className="display">
           {nav.about ? (
