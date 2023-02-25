@@ -108,25 +108,7 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     return (
       <div className="contentContainer">
         <div className="content">
-          {picSlide ? (
-            <>
-              <div className="profPic">
-                <Card />
-              </div>
-              <div className="homeBio">
-                <BioCard />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="profPicStatic">
-                <Card />
-              </div>
-              <div className="homeBioStatic">
-                <BioCard />
-              </div>
-            </>
-          )}
+          hi
         </div>
       </div>
     );
@@ -158,24 +140,17 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       {/* Custom Cursor */}
       <MyCursor />
       {isLoading ? <ModernAppLoader /> : ""}
-      <div className="modernContainer">
-        <div className="topBar">
-          <div className="topLeftLogo" onClick={() => changePage("home")}>
-            <img src={BlockLetterLogo} height="90%" overflow="hidden" />
-            {/* <Logo /> */}
-          </div>
-          <div className="navbar">
+      <div className="modernContainerMobile">
+        <div className="topBarMobile">
+          <div className="navbarMobile">
             <div onClick={() => changePage("about")}>about</div>
             <div onClick={() => changePage("undergrad")}>undergrad</div>
             <div onClick={() => changePage("today")}>today</div>
             <div onClick={() => changePage("projects")}>projects</div>
             <div onClick={() => changePage("contact")}>contact</div>
-            {/* <div onClick={() => changePage("blog")}>blog</div> */}
             <div onClick={() => downgradeTheme("retro")}>retro</div>
           </div>
-          <div></div>
           <div className="contactIcons">
-            <div></div>
             <div
               className="linkedInIcon"
               onClick={() =>

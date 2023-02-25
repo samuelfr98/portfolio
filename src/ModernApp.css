@@ -1,4 +1,3 @@
-
 .global {
   overflow: hidden;
   height: 100vh;
@@ -1745,31 +1744,33 @@ textarea {
   transition: 0.6s;
 }
 
-
-
-
 /* Mobile CSS */
 
 @media screen and (max-height: 850px) and (max-width: 400px) {
-  
   .global {
     overflow: hidden;
-    background-color: #464646;
-    
-  }
-
-  .topBar {
     color: white;
   }
 
-  .profPic {
+  .modernContainerMobile {
+    background-color: #464646;
+
+  }
+
+  .topBarMobile {
+    color: white;
     display: flex;
-    justify-content: right;
-    vertical-align: bottom;
-    padding-top: 50vh;
-    padding-right: 1vw;
-    perspective: 100px;
-    animation: prof 6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    flex-direction: row;
+  }
+
+  .navbarMobile {
+    flex-direction: column;
+    flex: 1;
+
+  }
+
+  .contactIcons {
+    flex: 1;
   }
 
   .contentContainer .display {
@@ -1783,71 +1784,11 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  @keyframes prof {
-    0% {
-      padding-top: 100vh;
-    }
-    60% {
-      padding-top: 100vh;
-      transform: rotate(45deg);
-    }
-    100% {
-      padding-top: 50vh;
-    }
-  }
-
-  .samProfileImage {
-    height: 55vh;
-  }
-
-  .bioCard {
-    height: 30vh;
-    padding-top: -5vh;
-  }
-
   .cardContainerProf {
     display: flex;
     justify-content: right;
     align-items: bottom;
     position: absolute;
     bottom: 12vh;
-  }
-
-  .homeBio {
-    display: flex;
-    vertical-align: center;
-    padding-top: 20vh;
-    overflow: scroll;
-    animation: bio 7s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-
-  @keyframes bio {
-    0% {
-      padding-top: 250vh;
-    }
-    60% {
-      padding-top: 250vh;
-      transform: rotate(45deg);
-    }
-    100% {
-      padding-top: 20vh;
-    }
-  }
-
-  .profPicStatic {
-    display: flex;
-    justify-content: right;
-    vertical-align: bottom;
-    padding-top: 50vh;
-    padding-right: 1vw;
-    overflow: scroll;
-    perspective: 100px;
-  }
-
-  .homeBioStatic {
-    display: flex;
-    vertical-align: center;
-    padding-top: 20vh;
-    overflow: visible;
   }
 }
