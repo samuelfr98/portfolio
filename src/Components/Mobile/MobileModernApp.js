@@ -26,7 +26,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     today: false,
     projects: false,
     contact: false,
-    blog: false,
     home: true,
   });
 
@@ -48,7 +47,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: false,
-        blog: false,
         home: false,
       });
     else if (navClicked === "undergrad")
@@ -58,7 +56,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: false,
-        blog: false,
         home: false,
       });
     else if (navClicked === "today")
@@ -68,7 +65,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         today: true,
         projects: false,
         contact: false,
-        blog: false,
         home: false,
       });
     else if (navClicked === "projects")
@@ -78,7 +74,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: true,
         contact: false,
-        blog: false,
         home: false,
       });
     else if (navClicked === "contact")
@@ -88,7 +83,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: true,
-        blog: false,
         home: false,
       });
     else if (navClicked === "home")
@@ -98,7 +92,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         today: false,
         projects: false,
         contact: false,
-        blog: false,
         home: true,
       });
     Home();
@@ -107,16 +100,14 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
   const Home = () => {
     return (
       <div className="contentContainer">
-        <div className="content">
-          hi
-        </div>
+        <div className="content">hi</div>
       </div>
     );
   };
 
   return (
     <div
-      className="global"
+      className="globalMobile"
       onMouseMove={(e) => {
         const cursor = document.querySelector(".cursor");
         cursor.style.left = `${e.pageX}px`;
@@ -141,61 +132,23 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       <MyCursor />
       {isLoading ? <ModernAppLoader /> : ""}
       <div className="modernContainerMobile">
-        <div className="topBarMobile">
-          <div className="navbarMobile">
-            <div onClick={() => changePage("about")}>about</div>
-            <div onClick={() => changePage("undergrad")}>undergrad</div>
-            <div onClick={() => changePage("today")}>today</div>
-            <div onClick={() => changePage("projects")}>projects</div>
-            <div onClick={() => changePage("contact")}>contact</div>
-            <div onClick={() => downgradeTheme("retro")}>retro</div>
-          </div>
-          <div className="contactIcons">
-            <div
-              className="linkedInIcon"
-              onClick={() =>
-                window
-                  .open(
-                    "https://www.linkedin.com/in/sam-friedman-b8852118a",
-                    "_blank"
-                  )
-                  .focus()
-              }
-            >
-              <img src={linkedInIcon} />
-            </div>
-            <div
-              className="githubIcon"
-              onClick={() =>
-                window.open("https://github.com/samuelfr98", "_blank").focus()
-              }
-            >
-              <img src={githubIcon} />
-            </div>
-            <div className="emailIcon" onClick={() => changePage("contact")}>
-              <img src={emailIcon} />
-            </div>
-          </div>
-        </div>
+        <div className="mobileNavIconContainer">
+        <div className="mobileNavIcon">
 
-        <div className="display">
-          {nav.about ? (
-            <About />
-          ) : nav.undergrad ? (
-            <Undergrad />
-          ) : nav.today ? (
-            <Today />
-          ) : nav.projects ? (
-            <Projects />
-          ) : nav.contact ? (
-            <Contact />
-          ) : nav.blog ? (
-            <Blog />
-          ) : nav.home ? (
-            Home()
-          ) : (
-            "Something went wrong. Please try again."
-          )}
+        <img src={githubIcon} height='100%'/>
+
+        </div>
+        </div>
+        <div className="displayMobile">
+          <div className="logoMobile">
+            <img src={BlockLetterLogo} height='auto' width='auto'/>
+          </div>
+          <div className="homeDescMobile">
+            <p>softwareEngineer</p>
+            <p>rockClimber</p>
+            <p>continuousLearner</p>
+            <p>curiousProblemSolver</p>
+          </div>
         </div>
       </div>
     </div>

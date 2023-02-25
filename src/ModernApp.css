@@ -182,7 +182,7 @@
 }
 
 .contactIcons div:hover {
-  background: linear-gradient(to bottom, #1f1f1f, rgb(139, 139, 139));
+  background: linear-gradient(to bottom, #e72d2d, rgb(139, 139, 139));
   animation: navHover 2s linear;
   /* cursor: pointer; */
 }
@@ -1515,6 +1515,7 @@ textarea {
   display: flex;
   flex-direction: column;
   transition: 0.6s;
+  scrollbar-width: none;
 }
 .projectContainer::-webkit-scrollbar {
   display: none;
@@ -1746,49 +1747,70 @@ textarea {
 
 /* Mobile CSS */
 
-@media screen and (max-height: 850px) and (max-width: 400px) {
-  .global {
-    overflow: hidden;
-    color: white;
+/**
+ * Firefox specific rule
+ */
+
+.globalMobile {
+  overflow: hidden;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #464646;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modernContainerMobile {
+  background-color: #464646;
+  height: 100%;
+}
+
+.mobileNavIconContainer {
+  position: relative;
+  /* background-color: white; */
+  height: 0;
+  color: black;
+  top: 0;
+  right: 0;
+}
+
+.mobileNavIcon {
+  position: absolute;
+  right: 0;
+  height: 10vh;
+
+}
+
+.displayMobile {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logoMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+
+}
+
+@-moz-document url-prefix() {
+  body .with-ff-fix {
+    font-weight: lighter !important;
   }
+}
 
-  .modernContainerMobile {
-    background-color: #464646;
-
-  }
-
-  .topBarMobile {
-    color: white;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .navbarMobile {
-    flex-direction: column;
-    flex: 1;
-
-  }
-
-  .contactIcons {
-    flex: 1;
-  }
-
-  .contentContainer .display {
-    overflow: scroll;
-    height: auto;
-  }
-
-  .content {
-    overflow: scroll;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .cardContainerProf {
-    display: flex;
-    justify-content: right;
-    align-items: bottom;
-    position: absolute;
-    bottom: 12vh;
-  }
+.homeDescMobile {
+  font-size: 1em;
+  font-style: italic;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-weight: 200;
+  flex: 1;
+  align-items: center;
 }
