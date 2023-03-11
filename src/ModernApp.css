@@ -1795,7 +1795,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 40vh;
 
 }
 
@@ -1806,11 +1806,17 @@ textarea {
 }
 
 .homeDescMobile {
-  font-size: 1em;
+  font-size: 1.5em;
   font-style: italic;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-weight: 200;
   flex: 1;
   align-items: center;
+}
+
+.homeDescMobile > p {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  padding: 15px;  
 }
