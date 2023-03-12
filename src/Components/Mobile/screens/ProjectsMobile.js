@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
 
 const ProjectsMobile = () => {
   return (
-    <div>ProjectsMobile</div>
-  )
-}
+    <div className="">
+      <div className="screenHeaderMobile">about</div>
+      <div className="screenContainerMobile">
+        <div className="screenButton" onClick={() => ""}>
+          <p>projects</p>
+          {/* <img>open</img> */}
+        </div>
+        <div className="screenButton" onClick={() => ""}>
+          <p>dynamically render all projects with scrolling and expansion</p>
+        </div>
 
-export default ProjectsMobile
+      </div>
+    </div>
+  );
+};
+
+export default ProjectsMobile;

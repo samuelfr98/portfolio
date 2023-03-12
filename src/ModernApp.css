@@ -71,6 +71,7 @@
   position: absolute;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  /* touch-action: none; */
   transition: all 0.2s ease;
   transition-property: background, border, transform;
   transform-origin: 150%, 150%;
@@ -1779,7 +1780,6 @@ textarea {
   position: absolute;
   right: 0;
   height: 10vh;
-
 }
 
 .displayMobile {
@@ -1791,12 +1791,24 @@ textarea {
   flex-direction: column;
 }
 
-.logoMobile {
+.logoMobile,
+.screenHeaderMobile {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  -moz-osx-font-smoothing: grayscale;
+}
+.logoMobile {
+  height: 32vh;
+}
 
+.screenHeaderMobile {
+  height: 20vh;
+  justify-content: left;
+  align-items: center;
+  font-weight: 200;
+  font-size: 2em;
+  margin-top: -30vh;
 }
 
 @-moz-document url-prefix() {
@@ -1805,18 +1817,47 @@ textarea {
   }
 }
 
-.homeDescMobile {
+.homeDescMobile,
+.screenContainerMobile {
   font-size: 1.5em;
   font-style: italic;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-weight: 200;
-  flex: 1;
+  flex: 1 1;
   align-items: center;
 }
 
-.homeDescMobile > p {
-  border-bottom: 1px solid white;
-  border-top: 1px solid white;
-  padding: 15px;  
+.homeButton,
+.screenButton {
+  font-size: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  margin: 3vh;
+  opacity: 0.9;
+  background-color: #5553538e;
+  border-radius: 1vh;
+}
+
+.homeButton:active,
+.screenButton:active {
+  background: #575757;
+  box-shadow: 0 0 2px 2px rgba(100, 100, 100, 0.396);
+}
+
+.homeButton {
+  width: 50vw;
+  height: 8vh;
+  justify-content: center;
+
+
+}
+
+.screenButton {
+  width: 50vw;
+  height: 10vh;
+  justify-content: left;
+  padding-left: 4vh;
+
 }

@@ -95,11 +95,25 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
           <img src={BlockLetterLogo} height="auto" width="auto" />
         </div>
         <div className="homeDescMobile">
-          <p onClick={() => changePage("about")}>about</p>
-          <p onClick={() => changePage("undergrad")}>undergrad</p>
-          <p onClick={() => changePage("today")}>career</p>
-          <p onClick={() => changePage("projects")}>projects</p>
-          <p onClick={() => changePage("contact")}>contact</p>
+          <div className="homeButton" onClick={() => changePage("about")}>
+            <p>about</p>
+          </div>
+          <div className="homeButton" onClick={() => changePage("undergrad")}>
+            <p>undergrad</p>
+          </div>
+
+          <div className="homeButton" onClick={() => changePage("today")}>
+            <p>career</p>
+          </div>
+          <div className="homeButton" onClick={() => changePage("projects")}>
+            <p>projects</p>
+          </div>
+          <div
+            className="homeButton"
+            onClick={() => changePage("contact")}
+          >
+            <p>contact</p>
+          </div>
         </div>
       </>
     );
@@ -110,8 +124,10 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       className="globalMobile"
       onMouseMove={(e) => {
         const cursor = document.querySelector(".cursor");
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
+        cursor.style.left =
+          e.pageX < window.innerWidth ? `${e.pageX}px` : cursor.style.left;
+        cursor.style.top =
+          e.pageY < window.innerHeight ? `${e.pageY}px` : cursor.style.top;
       }}
       onMouseDown={() => {
         const cursor = document.querySelector(".cursor");
@@ -134,7 +150,7 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       <div className="modernContainerMobile">
         <div className="mobileNavIconContainer">
           <div className="mobileNavIcon" onClick={() => changePage("home")}>
-            <img src={githubIcon} height='100%'/>
+            <img src={githubIcon} height="100%" />
           </div>
         </div>
         <div className="displayMobile">

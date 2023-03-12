@@ -157,8 +157,9 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       className="global"
       onMouseMove={(e) => {
         const cursor = document.querySelector(".cursor");
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
+        cursor.style.left = e.pageX < window.innerWidth ?`${e.pageX}px` : cursor.style.left;
+        cursor.style.top =  e.pageY < window.innerHeight ? `${e.pageY}px` : cursor.style.top;
+
       }}
       onMouseDown={() => {
         const cursor = document.querySelector(".cursor");
