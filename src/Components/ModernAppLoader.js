@@ -3,8 +3,8 @@ import ModernApp from "./ModernApp"
 
 const ModernAppLoader = () => {
     return(
-        <div className="loadContainer">
-            <div className="loadingBar">
+        <div className="loadContainerMobile">
+            <div className="loadingBarMobile">
             </div>
         </div>
     )
