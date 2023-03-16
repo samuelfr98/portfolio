@@ -8,7 +8,7 @@ import ProjectsMobile from "./screens/ProjectsMobile";
 import ContactMobile from "./screens/ContactMobile";
 import MyCursor from "../CustomCursor/MyCursor";
 import BlockLetterLogo from "../../Images/blockLetterInitials.png";
-import githubIcon from "../../Images/mobileNavBars.png";
+import mobileNavBars from "../../Images/mobileNavBars.png";
 import emailIcon from "../../Images/emailIcon.png";
 import linkedInIcon from "../../Images/mobileNavBars.png";
 
@@ -96,20 +96,24 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         </div>
         <div className="homeDescMobile">
           <div className="homeButton" onClick={() => changePage("about")}>
-            <p>about</p>
+            <div className="mobileSlide">about</div>
           </div>
           <div className="homeButton" onClick={() => changePage("undergrad")}>
-            <p>undergrad</p>
+            <div className="mobileSlide">undergrad</div>
+
           </div>
 
           <div className="homeButton" onClick={() => changePage("today")}>
-            <p>career</p>
+            <div className="mobileSlide">career</div>
+
           </div>
           <div className="homeButton" onClick={() => changePage("projects")}>
-            <p>projects</p>
+            <div className="mobileSlide">projects</div>
+
           </div>
           <div className="homeButton" onClick={() => changePage("contact")}>
-            <p>contact</p>
+            <div className="mobileSlide">contact</div>
+
           </div>
         </div>
       </>
@@ -143,33 +147,17 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     >
       {/* Custom Cursor */}
       <MyCursor />
-      {isLoading ? <ModernAppLoader /> : ""}
-      <div className="modernContainerMobile">
-        <div>
-          <div>
-            <div className="titleBarMobile">
-              <div className="fileNameMobile">
-                <h1>untitled - Sam Friedman</h1>
-              </div>
-              <div className="minMaxEscMobile">
-                <button className="minimizeMobile">&#95;</button>
-                <button className="maximizeMobile">&#9633;</button>
-                <button className="escMobile">&times;</button>
-              </div>
-            </div>
-          </div>
-          <div className="fileBarMobile">
-            <button>File</button>
-            <button>Edit</button>
-            <button>View</button>
-            <button>Image</button>
-            <button>Options</button>
-            <button>Help</button>
-          </div>
+      {isLoading ? (
+        <div className="loadContainerMobile">
+          <div className="loadingBarMobile"></div>
         </div>
+      ) : (
+        ""
+      )}
+      <div className="modernContainerMobile">
         <div className="mobileNavIconContainer">
           <div className="mobileNavIcon" onClick={() => changePage("home")}>
-            <img src={githubIcon} height="100%" />
+            <img src={mobileNavBars} height="100%" />
           </div>
         </div>
         <div className="displayMobile">
@@ -188,11 +176,6 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
           ) : (
             "Something went wrong. Please try again."
           )}
-        </div>
-        <div className="footerBar">
-          <div className="footerBarIcon">
-            footer
-          </div>
         </div>
       </div>
     </div>

@@ -1754,16 +1754,16 @@ textarea {
 
 .globalMobile {
   overflow: hidden;
-  color: white;
+  color: #d1adcc;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #BFBFBF;
+  background-color: #d1adcc;
   height: 100vh;
   width: 100vw;
 }
 
 .modernContainerMobile {
-  background-color: #BFBFBF;
+  background-color: #d1adcc;
   height: 100%;
 }
 
@@ -1805,24 +1805,24 @@ textarea {
   height: 20vh;
   justify-content: left;
   align-items: center;
-  font-weight: 200;
+  font-weight: bold;
   font-size: 2em;
   margin-top: -30vh;
 }
 
 @-moz-document url-prefix() {
   body .with-ff-fix {
-    font-weight: lighter !important;
+    font-weight: 600 !important;
   }
 }
 
 .homeDescMobile,
 .screenContainerMobile {
   font-size: 1.5em;
-  font-style: italic;
+  font-style: normal;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  font-weight: 200;
+  /* text-align: left; */
+  font-weight: 600;
   flex: 1 1;
   align-items: center;
 }
@@ -1830,145 +1830,52 @@ textarea {
 .homeButton,
 .screenButton {
   font-size: 20px;
-  transition: all 0.3s ease;
+  transition: all 2s ease;
   display: flex;
   align-items: center;
   margin: 3vh;
   opacity: 0.9;
-  background-color: #5553538e;
-  border-radius: 1vh;
+  background-color: #c2d2bd;
+  border-radius: none;
+  /* justify-content: left; */
 }
 
 .homeButton:active,
 .screenButton:active {
-  background: #575757;
-  box-shadow: 0 0 2px 2px rgba(100, 100, 100, 0.396);
+  background: #5f2c3e;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.396);
+}
+
+.mobileSlide {
+  position: relative;
+  left: 0;
+}
+
+.homeButton:active .mobileSlide {
+  animation: homeButtonPress 0.6s normal forwards ease-in 1;
+}
+
+@keyframes homeButtonPress {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 400%;
+  }
 }
 
 .homeButton {
   width: 50vw;
   height: 8vh;
-  justify-content: center;
-
-
+  padding-left: 6vw;
+  padding-right: 6vw;
 }
 
 .screenButton {
   width: 50vw;
   height: 10vh;
-  justify-content: left;
+  /* justify-content: left; */
   padding-left: 4vh;
-
-}
-
-
-.titleBarMobile {
-  overflow: hidden;
-  margin: 0px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  font-size: 8px;
-  padding-left: 50px;
-  border: 1px;
-  border-style: solid;
-  background-color: #020180;
-  color: white;
-  align-items: center;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.fileBarMobile {
-  overflow: hidden;
-  font-size: 8px;
-  padding-left: 4px;
-  align-items: center;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  width: 100vw;
-}
-
-.fileBarMobile button {
-  background-color: #bfbfbf;
-  border: none;
-  margin-right: 1px;
-  height: 5vh;
-}
-
-.fileBarMobile button:hover {
-  background-color: rgb(172, 172, 172);
-  color: black;
-  box-shadow: 2px 1px black;
-}
-
-.fileBarMobile button:active {
-  background-color: #cecccc;
-  box-shadow: 2px 1px rgb(161, 161, 161);
-}
-
-.fileNameMobile {
-  display: inline-block;
-  height: auto;
-}
-
-.minMaxEscMobile {
-  display: inline-block;
-  margin-right: 3px;
-  justify-content: center;
-  align-content: center;
-}
-
-.minimizeMobile {
-  content: "&#95;";
-}
-
-.maximizeMobile {
-  content: "&square;";
-}
-
-.escMobile {
-  content: "&times;";
-}
-
-.minMaxEscMobile button {
-  border-radius: 0px;
-  background-color: #bfbfbf;
-  color: black;
-  height: 20px;
-  width: 23px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: 1px;
-  padding: 0px;
-  box-shadow: 5px black;
-  font-size: 14px;
-  font-weight: bolder;
-  justify-content: center;
-  align-content: center;
-  padding-bottom: 18px;
-}
-
-.minMaxEscMobile button:hover {
-  background-color: rgb(172, 172, 172);
-  color: black;
-}
-
-.minMaxEscMobile button.active {
-  box-shadow: 1px 1px black;
-}
-
-.footerBar {
-  background-color: #CCCAC2;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-}
-
-.footerBarIcon {
-  color: black;
 }
 
 .loadContainerMobile {
