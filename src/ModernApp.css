@@ -1798,7 +1798,9 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 .logoMobile {
-  height: 32vh;
+  height: 24vh;
+  margin-top: 7vh;
+  margin-bottom: 5vh;
 }
 
 .screenHeaderMobile {
@@ -1829,21 +1831,23 @@ textarea {
 
 .homeButton,
 .screenButton {
-  font-size: 20px;
-  transition: all 2s ease;
+  font-size: 1.2em;
+  transition: all 0.8s ease;
   display: flex;
   align-items: center;
   margin: 3vh;
   opacity: 0.9;
   background-color: #c2d2bd;
-  border-radius: none;
-  /* justify-content: left; */
+  border-radius: 1.8vh;
+  box-shadow: -20px -16px #5f2c3e;
 }
 
 .homeButton:active,
 .screenButton:active {
   background: #5f2c3e;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.396);
+  transform: translate(-8px, -10px);
+  box-shadow: -10px -8px #5f2c3e;
 }
 
 .mobileSlide {

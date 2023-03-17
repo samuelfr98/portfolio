@@ -157,7 +157,7 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
       <div className="modernContainerMobile">
         <div className="mobileNavIconContainer">
           <div className="mobileNavIcon" onClick={() => changePage("home")}>
-            <img src={mobileNavBars} height="100%" />
+            <img src={BlockLetterLogo} height="100%" />
           </div>
         </div>
         <div className="displayMobile">
