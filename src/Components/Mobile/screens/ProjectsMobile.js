@@ -2,8 +2,8 @@ import React from "react";
 
 const ProjectsMobile = () => {
   return (
-    <div className="">
-      <div className="screenHeaderMobile">about</div>
+    <div className="mobileScreen">
+      <div className="screenHeaderMobile">projects</div>
       <div className="screenContainerMobile">
         <div className="screenButton" onClick={() => ""}>
           <p>projects</p>

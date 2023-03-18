@@ -4,7 +4,7 @@ const TodayMobile = () => {
 
   // can flash ibm card on screen when loading
   return (
-    <div className="">
+    <div className="mobileScreen">
     <div className="screenHeaderMobile">
       career
     </div>
