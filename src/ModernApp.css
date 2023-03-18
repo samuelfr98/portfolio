@@ -1877,11 +1877,15 @@ textarea {
 
 .screenButton {
   width: 50vw;
-  height: 10vh;
+  height: auto;
   /* justify-content: left; */
   padding-left: 4vh;
 }
 
+.bioMobile {
+  align-items: top;
+  display: flex;
+}
 .loadContainerMobile {
   height: 100vh;
   width: minmax(0px, 100vw);
