@@ -5,7 +5,6 @@ const AboutMobile = () => {
   const [openedTabs, setOpenedTabs] = useState({
     bio: false,
     skills: false,
-    resume: false,
     interests: false,
   });
 
@@ -23,14 +22,6 @@ const AboutMobile = () => {
         bio: false,
         skills: !openedTabs.skills,
         resume: false,
-        interests: false,
-      });
-    }
-    if (tab == "resume") {
-      setOpenedTabs({
-        bio: false,
-        skills: false,
-        resume: !openedTabs.resume,
         interests: false,
       });
     }
@@ -52,26 +43,10 @@ const AboutMobile = () => {
           <p>bio</p>
           {openedTabs.bio ? (
             <div className="bioMobile">
-              <div>
-                I’m Sam Friedman, a versatile, motivated problem solver from
-                Baton Rouge, LA.
-              </div>
-              <div>
-                Throughout internships, undergrad courses in computer science
-                and entrepreneurship, and my career, I have learned to
-                appreciate the design thinking process. Whether collaborating
-                with start ups fueled by LEAN thinking or contributing to more
-                structured projects anchored by agile workflows, I prioritize
-                strategy, efficiency and longevity when designing and
-                implementing a solution.
-              </div>
-              <div>
-                I often use JavaScript, ReactJS, CSS and HTML for frontend
-                development. For backend development, maintenance, continuous
-                deployment and continuous integration, I often turn to AWS
-                Amplify and GitHub. When analyzing data, I frequently leverage
-                PL-SQL as well as Python.{" "}
-              </div>
+              <p>
+                Hi, I'm Sam Friedman. A motivated problem solver, curious
+                learner, and technology enthusiast.
+              </p>
             </div>
           ) : (
             ""
@@ -122,16 +97,6 @@ const AboutMobile = () => {
                   <li>sustainability</li>
                 </ul>
               </div>
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="screenButton" onClick={() => handleOpenedTab("resume")}>
-          <p>resume</p>
-          {openedTabs.resume ? (
-            <div className="bioMobile">
-              <div>resume</div>
             </div>
           ) : (
             ""

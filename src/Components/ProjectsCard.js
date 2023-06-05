@@ -1,22 +1,21 @@
 import "../ModernApp.css";
 import React, { useState, useEffect, useRef } from "react";
+import NonGithubProject from "./NonGithubProject";
 
 const ProjectCard = (props) => {
   // Is front side showing? T/F
 
   const tools = props.tools;
+  const [isPreviewed, setIsPreviewed] = useState(false);
 
   const preview = () => {
     return (
       <div
         className="projectPreview"
         onClick={() =>
-          window
-            .open(
-              props.link,
-              "_blank"
-            )
-            .focus()
+          !props.link == ""
+            ? window.open(props.link, "_blank").focus()
+            : setIsPreviewed(!isPreviewed)
         }
       >
         <div className="leftProjCard">
@@ -37,9 +36,16 @@ const ProjectCard = (props) => {
     );
   };
 
+
   return (
     <div className="projectCardContainer">
-      <div className="projectCard">{preview()}</div>
+      <div className="projectCard">
+        {!isPreviewed ? (
+          preview()
+        ) : (
+          <NonGithubProject />
+        )}
+      </div>
     </div>
   );
 };

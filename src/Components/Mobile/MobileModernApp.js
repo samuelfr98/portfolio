@@ -2,7 +2,7 @@ import "../../ModernApp.css";
 import React, { useEffect, useRef, useState } from "react";
 import ModernAppLoader from "../ModernAppLoader";
 import AboutMobile from "./screens/AboutMobile";
-import UndergradMobile from "./screens/UndergradMobile";
+import ResumeMobile from "./screens/ResumeMobile";
 import TodayMobile from "./screens/TodayMobile";
 import ProjectsMobile from "./screens/ProjectsMobile";
 import ContactMobile from "./screens/ContactMobile";
@@ -12,12 +12,18 @@ import mobileNavBars from "../../Images/mobileNavBars.png";
 import emailIcon from "../../Images/emailIcon.png";
 import linkedInIcon from "../../Images/mobileNavBars.png";
 
+//  Mobile version only has three main pages:
+//    About       --> Explain desktop has full features
+//    Resume      --> Mobile friendly version, encompassing skills, experience, etc.
+//    Projects    --> All projects have a link. Non-hosted examples will havea component page, others point to GitHub or deployment link
+//    Contact Me  --> E-mail, linkedin, github
+//    Landing Page (Home) --> Main navigation
+
 const MobileModernApp = ({ downgradeTheme }, { children }) => {
   const [isLoading, setLoading] = useState(true);
   const [nav, setNav] = useState({
     about: false,
-    undergrad: false,
-    today: false,
+    resume: false,
     projects: false,
     contact: false,
     home: true,
@@ -33,26 +39,15 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     if (navClicked === "about")
       setNav({
         about: true,
-        undergrad: false,
-        today: false,
+        resume: false,
         projects: false,
         contact: false,
         home: false,
       });
-    else if (navClicked === "undergrad")
+    else if (navClicked === "resume")
       setNav({
         about: false,
-        undergrad: true,
-        today: false,
-        projects: false,
-        contact: false,
-        home: false,
-      });
-    else if (navClicked === "today")
-      setNav({
-        about: false,
-        undergrad: false,
-        today: true,
+        resume: true,
         projects: false,
         contact: false,
         home: false,
@@ -60,8 +55,7 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     else if (navClicked === "projects")
       setNav({
         about: false,
-        undergrad: false,
-        today: false,
+        resume: false,
         projects: true,
         contact: false,
         home: false,
@@ -69,8 +63,7 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     else if (navClicked === "contact")
       setNav({
         about: false,
-        undergrad: false,
-        today: false,
+        resume: false,
         projects: false,
         contact: true,
         home: false,
@@ -78,8 +71,7 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     else if (navClicked === "home")
       setNav({
         about: false,
-        undergrad: false,
-        today: false,
+        resume: false,
         projects: false,
         contact: false,
         home: true,
@@ -92,28 +84,27 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
     return (
       <>
         <div className="logoMobile">
-          <img src={BlockLetterLogo} height="auto" width="auto" />
+          <img src={BlockLetterLogo} height="180vh" width="auto" />
         </div>
         <div className="homeDescMobile">
+          {/* Each section is a button */}
+          {/* On click, the section transitions to a new page */}
+          {/* Scroll lock to assist with longer sections, like Projects */}
+          {/* Color theme throughout */}
+
+          {/* Still working to center home and screen buttons. Not responding to flex justify-content, likely due to parent container's position */}
+
           <div className="homeButton" onClick={() => changePage("about")}>
-            <div className="mobileSlide">about</div>
+            <div className="mobileSlide">ABOUT</div>
           </div>
-          <div className="homeButton" onClick={() => changePage("undergrad")}>
-            <div className="mobileSlide">undergrad</div>
-
-          </div>
-
-          <div className="homeButton" onClick={() => changePage("today")}>
-            <div className="mobileSlide">career</div>
-
+          <div className="homeButton" onClick={() => changePage("resume")}>
+            <div className="mobileSlide">RESUMÉ</div>
           </div>
           <div className="homeButton" onClick={() => changePage("projects")}>
-            <div className="mobileSlide">projects</div>
-
+            <div className="mobileSlide">PROJECTS</div>
           </div>
           <div className="homeButton" onClick={() => changePage("contact")}>
-            <div className="mobileSlide">contact</div>
-
+            <div className="mobileSlide">CONTACT ME</div>
           </div>
         </div>
       </>
@@ -163,10 +154,8 @@ const MobileModernApp = ({ downgradeTheme }, { children }) => {
         <div className="displayMobile">
           {nav.about ? (
             <AboutMobile />
-          ) : nav.undergrad ? (
-            <UndergradMobile />
-          ) : nav.today ? (
-            <TodayMobile />
+          ) : nav.resume ? (
+            <ResumeMobile />
           ) : nav.projects ? (
             <ProjectsMobile />
           ) : nav.contact ? (

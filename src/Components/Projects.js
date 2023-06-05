@@ -8,12 +8,34 @@ const Projects = () => {
 
   const ref = useRef();
 
+  // Project List:
+  //  Portfolio Site
+  //  2048
+  //  CNN for Melanoma
+  //  MIPS CPU
+  //  Reddit Bot
+  //  SMTP
+  //  Makeathon
+
+  // TBD:
+  //  Stocks LSTM
+  //  Chat App
+
+  
   const projects = [
     {
       title: "Portfolio Website",
       desc: "As an exercise in web design and CSS, I decided to develop a personal website.",
-      tools: ["React", "HTML", "CSS", "Responsive Web Design", "AWS", "Graphql", "GitHub"],
-      link: "https://github.com/samuelfr98/portfolio",
+      tools: [
+        "React",
+        "HTML",
+        "CSS",
+        "Responsive Design",
+        "AWS",
+        "GraphQL",
+        "GitHub",
+      ],
+      link: "https://master.dgghcs9eikgpg.amplifyapp.com",
     },
     {
       title: "2048 Clone",
@@ -115,7 +137,6 @@ const Projects = () => {
       out = [0, 0, 0, 0, 0, 1, 0];
     } else {
       out = [0, 0, 0, 0, 0, 0, 1];
-
     }
 
     return out.map((p, i) => (
