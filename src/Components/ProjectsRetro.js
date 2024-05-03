@@ -7,10 +7,42 @@ const ProjectsRetro = (theme) => {
           <li
             className="retroProjLink"
             onClick={() =>
-              window.open("https://github.com/samuelfr98/portfolio", "_blank")
+              window.open("https://github.com/samuelfr98?tab=repositories", "_blank")
             }
           >
-            Portfolio Website
+            Sloper - Django Data Aggregation Service; Python Deep Learning Financial Analysis Service; Swift Backend Service; SwiftUI GUI
+          </li>
+          <li
+            className="retroProjLink"
+            onClick={() =>
+              window.open("https://dev.dgghcs9eikgpg.amplifyapp.com", "_blank")
+            }
+          >
+            Portfolio Site
+          </li>
+          <li
+            className="retroProjLink"
+            onClick={() =>
+              window.open("https://github.com/samuelfr98/ChatApp/tree/backend", "_blank")
+            }
+          >
+            ChatApp
+          </li>
+          <li
+            className="retroProjLink"
+            onClick={() =>
+              window.open("https://github.com/samuelfr98/Melanoma-Convolutional-Neural-Network", "_blank")
+            }
+          >
+            Melanoma Identifier
+          </li>
+          <li
+            className="retroProjLink"
+            onClick={() =>
+              window.open("https://github.com/samuelfr98/Venue-Finder-Web-App", "_blank")
+            }
+          >
+            UNC Chapel Hill Restaurant Search Engine
           </li>
           <li
             className="retroProjLink"
@@ -20,46 +52,7 @@ const ProjectsRetro = (theme) => {
           >
             2048 Clone
           </li>
-          <li
-            className="retroProjLink"
-            onClick={() =>
-              window.open("https://github.com/samuelfr98/Melanoma-Convolutional-Neural-Network", "_blank")
-            }
-          >
-            Convolutional Neural Network to Identify Malignant Tissue
-          </li>
-          <li
-            className="retroProjLink"
-            onClick={() =>
-              window.open("", "_blank")
-            }
-          >
-            System Verilog MIPS CPU Emulator
-          </li>
-          <li
-            className="retroProjLink"
-            onClick={() =>
-              window.open("", "_blank")
-            }
-          >
-            Reddit Bot
-          </li>
-          <li
-            className="retroProjLink"
-            onClick={() =>
-              window.open("", "_blank")
-            }
-          >
-            SMTP Client and Server
-          </li>
-          <li
-            className="retroProjLink"
-            onClick={() =>
-              window.open("", "_blank")
-            }
-          >
-            Makeathon
-          </li>
+
         </ul>
       </div>
     </div>

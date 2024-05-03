@@ -9,84 +9,60 @@ const Projects = () => {
   const ref = useRef();
 
   // Project List:
-  //  Portfolio Site
-  //  2048
-  //  CNN for Melanoma
-  //  MIPS CPU
-  //  Reddit Bot
-  //  SMTP
-  //  Makeathon
-
-  // TBD:
-  //  Stocks LSTM
+  //  Sloper
+  //    LSTM Python
+  //    API Data Layer Django
+  //    UI Layer Swift
+  //  Portfolio site
   //  Chat App
+  //  Melanoma RNN
+  //  Small projects from undergrad like reddit bots, 2048 clone, verilog mips interpretter, smtp client and server as an intro to sockets
 
-  
+
   const projects = [
     {
-      title: "Portfolio Website",
-      desc: "As an exercise in web design and CSS, I decided to develop a personal website.",
+      title: "Sloper",
+      desc: "This began as a personal challenge to build a Stocks analysis and data visualization app for absolutely no cost, and it culminated in multiple independently and collectively novel services.",
       tools: [
-        "React",
-        "HTML",
-        "CSS",
-        "Responsive Design",
-        "AWS",
-        "GraphQL",
-        "GitHub",
+        "Python Django Data Aggregation and Enrichment Layer",
+        "- - - - - - - - - - - -",
+        "Python Deep Learning Layer",
+        "- - - - - - - - - - - -",
+        "Swift Backend Layer",
+        "- - - - - - - - - - - -",
+        "SwiftUI iOS/GUI Layer"
       ],
-      link: "https://master.dgghcs9eikgpg.amplifyapp.com",
+      link: "https://github.com/samuelfr98?tab=repositories",
     },
     {
-      title: "2048 Clone",
-      desc: "First exposure to responsive web design in COMP 426 (Advanced Web Development)",
-      tools: ["React", "HTML", "CSS", "GitHub"],
-      link: "https://github.com/samuelfr98/2048",
+      title: "Portfolio Site",
+      desc: "This website served as an exercise in learning more about ReactJS, CSS, and creative web designs.",
+      tools: [],
+      link: "https://dev.dgghcs9eikgpg.amplifyapp.com",
     },
     {
-      title: "Convolutional Neural Network to Identify Malignant Tissue",
-      desc: "Implemented a convolutional neural network in PyTorch, a hand written logistic regression model and then Scikit-learn's built in LogisticRegression model. Finally, outcomes of all three methods were compared.",
-      tools: [
-        "Python",
-        "PyTorch",
-        "Scikit-learn",
-        "Machine learning models",
-        "Google Colab",
-        "Jupyter",
-      ],
+      title: "Chat App",
+      desc: "A messenger application leveraging AWS and a serverless design.",
+      tools: [],
+      link: "https://github.com/samuelfr98/ChatApp/tree/backend",
+    },
+    {
+      title: "Melanoma Identifier",
+      desc: "A convolutional neural network to determine if images of skin legions are cancerous or benign. The final project for COMP 560 - Machine Learning.",
+      tools: [],
       link: "https://github.com/samuelfr98/Melanoma-Convolutional-Neural-Network",
     },
     {
-      title: "System Verilog MIPS CPU Emulator",
-      desc: "Designed simple circuits up to a fully programmable, single cycle MIPS CPU on an Arduino Nexus. Demonstrated functionality by programming a game in MIPS and playing on the device.",
-      tools: [
-        "SystemVerilog",
-        "VirtualBox",
-        "Arduino",
-        "MIPS",
-        "Computer Design",
-        "Computer Architecture",
-        "Digital Logic",
-      ],
-      link: "",
+      title: "UNC Chapel Hill Restaurant Search Engine",
+      desc: "A search engine to find local restaurants and bars around campus at UNC Chapel Hill. A project in COMP 426 - Advanced Web Design.",
+      tools: [],
+      link: "https://github.com/samuelfr98/Venue-Finder-Web-App",
     },
     {
-      title: "Reddit Bot",
-      desc: "Built a reddit bot to correct misspellings of the artist MF DOOM's name.",
-      tools: ["Python3", "Reddit API"],
-      link: "",
-    },
-    {
-      title: "SMTP Client and Server",
-      desc: "For Comp 435 (Networking), built a client and server to send emails. From parsing the client's input to routing messages via web sockets on the server side to allowing all functionality of a typical email UI, the program allows users to send and receive emails.",
-      tools: ["Python", "Sockets", "VIM", "Network Protocols"],
-      link: "",
-    },
-    {
-      title: "Makeathon",
-      desc: "Won cash prize investment in 2019 UNC Start Up competition, the Makeathon. In one week, our team of five identified a problem, interviewed experts while brainstorming solution, built a minimally viable product and pitched to investors on competition day - all while simultaneously full time students. ",
-      tools: ["Teamwork", "LEAN", "Pitching", "Design Thinking Process"],
-      link: "",
+      title: "2048 Clone",
+      desc: "An undergraduate introduction to ReactJS.",
+      tools: [],
+      link: "https://github.com/samuelfr98/2048",
     },
   ];
 
@@ -124,19 +100,17 @@ const Projects = () => {
     let out = [];
 
     if (scrollPosition < 0.8) {
-      out = [1, 0, 0, 0, 0, 0, 0];
+      out = [1, 0, 0, 0, 0, 0];
     } else if (scrollPosition < 1.8) {
-      out = [0, 1, 0, 0, 0, 0, 0];
+      out = [0, 1, 0, 0, 0, 0];
     } else if (scrollPosition < 2.8) {
-      out = [0, 0, 1, 0, 0, 0, 0];
+      out = [0, 0, 1, 0, 0, 0];
     } else if (scrollPosition < 3.8) {
-      out = [0, 0, 0, 1, 0, 0, 0];
+      out = [0, 0, 0, 1, 0, 0];
     } else if (scrollPosition < 4.8) {
-      out = [0, 0, 0, 0, 1, 0, 0];
-    } else if (scrollPosition < 5.8) {
-      out = [0, 0, 0, 0, 0, 1, 0];
+      out = [0, 0, 0, 0, 1, 0];
     } else {
-      out = [0, 0, 0, 0, 0, 0, 1];
+      out = [0, 0, 0, 0, 0, 1];
     }
 
     return out.map((p, i) => (

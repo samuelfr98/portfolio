@@ -31,7 +31,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
   const [nav, setNav] = useState({
     about: false,
     undergrad: false,
-    today: false,
     projects: false,
     contact: false,
     blog: false,
@@ -55,7 +54,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       setNav({
         about: true,
         undergrad: false,
-        today: false,
         projects: false,
         contact: false,
         blog: false,
@@ -65,7 +63,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       setNav({
         about: false,
         undergrad: true,
-        today: false,
         projects: false,
         contact: false,
         blog: false,
@@ -75,7 +72,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       setNav({
         about: false,
         undergrad: false,
-        today: true,
         projects: false,
         contact: false,
         blog: false,
@@ -85,7 +81,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       setNav({
         about: false,
         undergrad: false,
-        today: false,
         projects: true,
         contact: false,
         blog: false,
@@ -95,7 +90,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       setNav({
         about: false,
         undergrad: false,
-        today: false,
         projects: false,
         contact: true,
         blog: false,
@@ -115,7 +109,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
       setNav({
         about: false,
         undergrad: false,
-        today: false,
         projects: false,
         contact: false,
         blog: false,
@@ -192,7 +185,6 @@ const ModernApp = ({ downgradeTheme }, { children }) => {
           <div className="navbar">
             <div onClick={() => changePage("about")}>about</div>
             <div onClick={() => changePage("undergrad")}>undergrad</div>
-            <div onClick={() => changePage("today")}>today</div>
             <div onClick={() => changePage("projects")}>projects</div>
             <div onClick={() => changePage("contact")}>contact</div>
             {/* <div onClick={() => changePage("blog")}>blog</div> */}

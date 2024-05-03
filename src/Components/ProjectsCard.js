@@ -30,7 +30,7 @@ const ProjectCard = (props) => {
               <div>{t}</div>
             ))}
           </div>
-          {/* <div className="projectLink">{props.link}</div> */}
+          <div className="projectLink">Click the card to learn more!</div>
         </div>
       </div>
     );

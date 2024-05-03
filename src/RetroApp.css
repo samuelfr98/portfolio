@@ -516,6 +516,8 @@
 .retroSendEmail {
   margin: 2vh;
   padding: 2vh;
+  border: 2px solid #F5F5F5;
+
 }
 .retroCancelEmail:hover,
 .retroSendEmail:hover {
@@ -553,6 +555,11 @@
 }
 
 .projectsRetro {
+}
+
+.retroProjLink {
+  border: 2px solid #F5F5F5;
+  padding: 0.2vh;
 }
 
 .retroProjLink:hover {
